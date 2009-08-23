@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # This script is expected to be executed from loeppky.com:/home/loeppky/www/chuckanutbay
+# As dynamicPages/common/databaseConnection.php is not stored on GitHub,
+# it's expected that the file already exist or be manually copied.
 
 # Download zip file from GitHub
 curl -L -O http://github.com/BigLep/chuckanutbay.com/zipball/master
