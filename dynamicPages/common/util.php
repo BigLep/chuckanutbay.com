@@ -122,7 +122,7 @@
 	 * @param $label String The label to give this component when it is part of an Ext.form.FormPanel.
 	 * @param $html String The HTML to render for the component.  This is expected to be a simple text string or image tage.
 	 */
-	function getExpComponent($label, $html) {
+	function getExtComponent($label, $html) {
 		return array(
 			"fieldLabel" => $label,
 			"html" => $html
