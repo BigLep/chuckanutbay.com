@@ -5,6 +5,8 @@
 # As dynamicPages/common/databaseConnection.php is not stored on GitHub,
 # it's expected that the file already exist or be manually copied.
 
+scriptDir=`dirname $0`
+
 installDir=$1
 echo "Installing latest GitHub to: $installDir"
 mkdir $installDir
@@ -30,8 +32,10 @@ find . -type f -name '*.php' -exec chmod 755 {} \;
 echo
 
 # Copy the contents of Applications and dynamicPages
-echo "Copying downloaded Applications and dynamicPages to $installDir"
-rsync -av Applications dynamicPages ../
+echo "Copying content into to $installDir"
+rsync -av \
+	--include-from=${scriptDir}/installGitHubToDir-includes.txt \
+	. ../
 echo
 
 # Cleanup
