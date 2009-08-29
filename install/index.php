@@ -25,7 +25,6 @@ require('../dynamicPages/common/extJsIncludes.php');
 			
 			for (var i = 0; i < scriptIds.length; i++) {
 				var scriptId = scriptIds[i];
-				console.log(scriptId);
 				Ext.get(scriptId + 'Button').on(
 					"click", 
 					runScript.createCallback(scriptId + 'Output', scriptId)
