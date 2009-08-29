@@ -6,35 +6,47 @@ require('../dynamicPages/common/extJsIncludes.php');
 	<script type="application/javascript">
 		Ext.onReady(function() {
 			/**
-			 * @param {Element/String} $outputEl Element to load the contents of the script output to.
-			 * @param {String} $scriptId Id of the script to run as defined in runScript.php
+			 * @param {Element/String} outputEl Element to load the contents of the script output to.
+			 * @param {String} scriptId Id of the script to run as defined in runScript.php
 			 */
-			function runScript($outputEl, $scriptId) {
-				Ext.get($outputEl).load({
+			function runScript(outputEl, scriptId) {
+				Ext.get(outputEl).load({
 					url : 'runScript.php',
-					params : 'id=' + $scriptId,
+					params : 'id=' + scriptId,
 					method : 'GET'
 				});
 			}
 			
-			Ext.get("installGitHubToDevoButton").on(
-				"click", 
-				function() {
-					runScript("installGitHubToDevoOutput", "installGitHubToDevo"); 
-				}
-			);
-			Ext.get("promoteDevoToProdButton").on(
-				"click", 
-				function() {
-					runScript("promoteDevoToProdOutput", "promoteDevoToProd"); 
-				}
-			);
+			var scriptIds = [
+				'setupDevo',
+				'installGitHubToDevo',
+				'promoteDevoToProd'
+			];
+			
+			for (var i = 0; i < scriptIds.length; i++) {
+				var scriptId = scriptIds[i];
+				console.log(scriptId);
+				Ext.get(scriptId + 'Button').on(
+					"click", 
+					runScript.createCallback(scriptId + 'Output', scriptId)
+				);
+			}
 		});
 	</script>
 
 <?php
 require('../dynamicPages/common/endHeadToBody.php');
 ?>
+	<div id="setupDevo" style="padding-bottom:25px;">
+		<h2>Setup DEVO</h2>
+		<p>
+			This script will setup the necessary directories for a DEVO site.  The DEVO site will be located at <a href="../DEVO/">../DEVO</a>.  
+			After running this script, you can "Install GitHub to Devo" below.
+		</p>
+		<button id="setupDevoButton">Setup DEVO</button>
+		<div id="setupDevoOutput"></div>
+	</div>
+	
 	<div id="installGitHubToDevo" style="padding-bottom:25px;">
 		<h2>Install GitHub to DEVO</h2>
 		<p>
@@ -51,7 +63,7 @@ require('../dynamicPages/common/endHeadToBody.php');
 			This script will copy the contents from the <a href="../DEVO/">DEVO site</a> to the <a href="../">PROD site</a>.
 			This should only be done once <a href="../DEVO/">DEVO</a> has been verified.
 		</p>
-		<button>Promote DEVO to PROD</button>
+		<button id="promoteDevoToProdButton">Promote DEVO to PROD</button>
 		<div id="promoteDevoToProdOutput"></div>
 	</div>
 <?php
