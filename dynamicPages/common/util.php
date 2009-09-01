@@ -168,4 +168,38 @@
 			return null;
 		}
 	}
+	
+	/**
+	 * @param String $productType Valid values are defined in the database: quickbooks_item_supplements.product_type.
+	 * @param String $size Valid values are defined in the database: quickbooks_item_supplements.size.
+	 * @param String $idBase A quickbooks_items.id with everything before the "-" (e.g., 1400 for 1400-1)
+	 * @param String $imageType Valid values include: Label, Label1, CaseLabel, Marketing1, Marketing2, Marketing3, and Packaged 
+	 * @return File path for the corresponding product image.
+	 */
+	function getImagePath($productType, $size, $idBase, $imageType) {
+		return "../../Images/Products/$productType/$size/$idBase-$imageType.jpg";
+	}
+	
+	/**
+	 * @param String $productType Valid values are defined in the database: quickbooks_item_supplements.product_type.
+	 * @param String $size Valid values are defined in the database: quickbooks_item_supplements.size.
+	 * @param String $idBase A quickbooks_items.id with everything before the "-" (e.g., 1400 for 1400-1)
+	 * @param String $imageType Valid values include: Label, Label1, CaseLabel, Marketing1, Marketing2, Marketing3, and Packaged 
+	 * @return HTML Code for the given image Type
+	 */
+	function getProductImageHtml($productType, $size, $idBase, $imageType) {
+		return "<img src= \"" . getImagePath($productType, $size, $idBase, $imageType) ."\" width=\"250\"/>";
+	}
+	
+	/**
+	 * @param String $productType Valid values are defined in the database: quickbooks_item_supplements.product_type.
+	 * @param String $size Valid values are defined in the database: quickbooks_item_supplements.size.
+	 * @param String $idBase A quickbooks_items.id with everything before the "-" (e.g., 1400 for 1400-1)
+	 * @param String $imageType Valid values include: Label, Label1, CaseLabel, Marketing1, Marketing2, Marketing3, and Packaged 
+	 * @return True of False if the image exists of not
+	 */
+	function doesProductImageExist($productType, $size, $idBase, $imageType) {
+		return file_exists(getImagePath($productType, $size, $idBase, $imageType));
+	}
+
 ?>

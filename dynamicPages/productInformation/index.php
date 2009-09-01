@@ -30,6 +30,8 @@ $tagLineKey = "tagLine";
 $caseDimensionsKey = "caseDimensions";
 $casesPerPalletLayerKey = "casesPerPalletLayerKey";
 $caseLayersPerPalletKey = "caseLayersPerPallet";
+$sizeKey = "size";
+$productTypeKey = "productType";
 // nutrition_labels
 $ingredientsKey = "ingredients";
 $allergensKey = "allergens";
@@ -60,6 +62,8 @@ $quickBooksItemIdQuery = createSqlQuery(
 		 ", qbis.case_dimensions as '$caseDimensionsKey'",
 		 ", qbis.cases_per_pallet_layer as '$casesPerPalletLayerKey'",
 		 ", qbis.case_layers_per_pallet as '$caseLayersPerPalletKey'",
+		 ", qbis.size as '$sizeKey'",
+		 ", qbis.product_type as '$productTypeKey'",
 		 ", nl.ingredients as '$ingredientsKey'", 
 		 ", nl.allergens as '$allergensKey'", 
 		 ", nl.us_label_image_id as '$usNutritionLabelImageIdKey'", 
@@ -97,6 +101,9 @@ if (!$singleItemRow) {
 	return;
 }
 
+$size = $singleItemRow[$sizeKey];
+$productType = $singleItemRow[$productTypeKey];
+
 // Create a list of Ext panels by using the getExtFormPanel function.
 $extPanels = array();
 
@@ -108,23 +115,35 @@ $generalInformationPanel = getExtFormPanel("General Information", array(
 array_push($extPanels, $generalInformationPanel);
 
 // Create the "Individual Information" panel from the singleItemRow.
-$individualInformationPanel = getExtFormPanel("Individual Information", array(
-	getExtComponent("Item Number", $singleItemRow[$itemNumberKey]),
-	getExtComponent("UPC", getEncodedUpcCode($singleItemRow[$upcKey])),
-	getExtComponent("Gross Weight", $singleItemRow[$unitWeightOzKey] . " oz / " . $singleItemRow[$unitWeightGKey] .  " g"),
-	getExtComponent("Ingredient Statment", $singleItemRow[$ingredientsKey]),
-	getExtComponent("Allergen Statment", nl2br($singleItemRow[$allergensKey])),
-	getExtComponent("Nutritional Data", "<img src=\"/dynamicPages/getImage/?id=$singleItemRow[$usNutritionLabelImageIdKey]\" width=\"250\"/>"),
-	getExtComponent("Frozen Shelf Life", $singleItemRow[$frozenShelfLifeKey]),
-	getExtComponent("Frozen Temp Range", $singleItemRow[$frozenTemperatureRangeKey]),
-	getExtComponent("Refrigerated Shelf Life", $singleItemRow[$refrigeratedShelfLifeKey]),
-	getExtComponent("Refrigerated Temp Range", $singleItemRow[$refrigeratedTemperatureRangeKey]),
-	getExtComponent("Room Temp Shelf Life", $singleItemRow[$roomShelfLifeKey]),
-	getExtComponent("Room Temp Range", $singleItemRow[$roomTemperatureRangeKey]),
-	getExtComponent("Production Code", $singleItemRow[$productionCodeKey]),
-	getExtComponent("Kosher Status", $singleItemRow[$kosherStatusKey]),
-	getExtComponent("Label Image", "<img src=\"/downloads/label_scans/$singleItemRow[$itemNumberKey].png\" width=\"250\"/>")
-));
+$individualInformationComponents = array();
+array_push($individualInformationComponents, getExtComponent("Item Number", $singleItemRow[$itemNumberKey]));
+array_push($individualInformationComponents, getExtComponent("UPC", getEncodedUpcCode($singleItemRow[$upcKey])));
+array_push($individualInformationComponents, getExtComponent("Gross Weight", $singleItemRow[$unitWeightOzKey] . " oz / " . $singleItemRow[$unitWeightGKey] .  " g"));
+array_push($individualInformationComponents, getExtComponent("Ingredient Statment", $singleItemRow[$ingredientsKey]));
+array_push($individualInformationComponents, getExtComponent("Allergen Statment", nl2br($singleItemRow[$allergensKey])));
+array_push($individualInformationComponents, getExtComponent("Nutritional Data", "<img src=\"/dynamicPages/getImage/?id=$singleItemRow[$usNutritionLabelImageIdKey]\" width=\"250\"/>"));
+array_push($individualInformationComponents, getExtComponent("Frozen Shelf Life", $singleItemRow[$frozenShelfLifeKey]));
+array_push($individualInformationComponents, getExtComponent("Frozen Temp Range", $singleItemRow[$frozenTemperatureRangeKey]));
+array_push($individualInformationComponents, getExtComponent("Refrigerated Shelf Life", $singleItemRow[$refrigeratedShelfLifeKey]));
+array_push($individualInformationComponents, getExtComponent("Refrigerated Temp Range", $singleItemRow[$refrigeratedTemperatureRangeKey]));
+array_push($individualInformationComponents, getExtComponent("Room Temp Shelf Life", $singleItemRow[$roomShelfLifeKey]));
+array_push($individualInformationComponents, getExtComponent("Room Temp Range", $singleItemRow[$roomTemperatureRangeKey]));
+array_push($individualInformationComponents, getExtComponent("Production Code", $singleItemRow[$productionCodeKey]));
+array_push($individualInformationComponents, getExtComponent("Kosher Status", $singleItemRow[$kosherStatusKey]));
+if (doesProductImageExist($productType, $size, $idBase,"Label")){
+	array_push($individualInformationComponents, getExtComponent("Individual Label", getProductImageHtml($productType, $size, $idBase,"Label")));
+}
+if (doesProductImageExist($productType, $size, $idBase,"Label1")){
+	array_push($individualInformationComponents, getExtComponent("Individual Label 2", getProductImageHtml($productType, $size, $idBase,"Label1")));
+}
+if (doesProductImageExist($productType, $size, $idBase,"CaseLabel")){
+	if ($idBase < 2000) {
+		echo ("winner");
+		array_push($individualInformationComponents, getExtComponent("Box Label", getProductImageHtml($productType, $size, $idBase,"CaseLabel")));
+	}
+}
+
+$individualInformationPanel = getExtFormPanel("Individual Information", $individualInformationComponents);
 array_push($extPanels, $individualInformationPanel);
 
 // Remove the singleItemRow, because we are done with it.
@@ -135,17 +154,20 @@ ksort($packToRowMap);
 
 foreach ($packToRowMap as $pack => $multipleItemRow) {
 	// Create the "Group Information" panel for each pack value.
-	$groupInformationPanel = getExtFormPanel("Group Information ($pack)", array(
-		getExtComponent("Item Number", $multipleItemRow[$itemNumberKey]),
-		getExtComponent("UPC", getEncodedUpcCode($multipleItemRow[$upcKey])),
-		getExtComponent("Gross Weight (lbs.)", $multipleItemRow[$grossWeightLbKey]),
-		getExtComponent("Pack / Unit", "$multipleItemRow[$packKey] / $multipleItemRow[$unitWeightKey]"),
-		getExtComponent("Case Cube", $multipleItemRow[$caseCubeKey]),
-		getExtComponent("Ti x Hi", "$multipleItemRow[$casesPerPalletLayerKey] / $multipleItemRow[$caseLayersPerPalletKey]"),
-		getExtComponent("Case (L'' X W'' X H'')", $multipleItemRow[$caseDimensionsKey]),
-		getExtComponent("Production Code", $multipleItemRow[$productionCodeKey]),
-		getExtComponent("Label Image", "<img src=\"/downloads/label_scans/$multipleItemRow[$itemNumberKey].png\" width=\"250\"/>")
-	));
+
+	$groupInformationComponents = array();
+	array_push($groupInformationComponents, getExtComponent("Item Number", $multipleItemRow[$itemNumberKey]));
+	array_push($groupInformationComponents, getExtComponent("UPC", getEncodedUpcCode($multipleItemRow[$upcKey])));
+	array_push($groupInformationComponents, getExtComponent("Gross Weight (lbs.)", $multipleItemRow[$grossWeightLbKey]));
+	array_push($groupInformationComponents, getExtComponent("Pack / Unit", "$multipleItemRow[$packKey] / $multipleItemRow[$unitWeightKey]"));
+	array_push($groupInformationComponents, getExtComponent("Case Cube", $multipleItemRow[$caseCubeKey]));
+	array_push($groupInformationComponents, getExtComponent("Ti x Hi", "$multipleItemRow[$casesPerPalletLayerKey] / $multipleItemRow[$caseLayersPerPalletKey]"));
+	array_push($groupInformationComponents, getExtComponent("Case (L'' X W'' X H'')", $multipleItemRow[$caseDimensionsKey]));
+	array_push($groupInformationComponents, getExtComponent("Production Code", $multipleItemRow[$productionCodeKey]));
+	if (doesProductImageExist($productType, $size, $idBase,"CaseLabel")){
+		array_push($groupInformationComponents, getExtComponent("Case Label", getProductImageHtml($productType, $size, $idBase,"CaseLabel")));
+	}
+	$groupInformationPanel = getExtFormPanel("Group Information ($pack)", $groupInformationComponents);
 	array_push($extPanels, $groupInformationPanel);
 }
 
