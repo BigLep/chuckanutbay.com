@@ -79,7 +79,8 @@
 				} else if (strstr($fileName, "Allergens") != null) { // allergens
 					echo("\t\"$fileName\" is an allergens file.\n");
 					$allergensTextLines = file($dirToProcess.$fileName); // read the contents of the file
-					$allergensText = $allergensTextLines[1]; // index 0 has an unnecessary header, we just read the second line (index 1)
+					array_shift($allergensTextLines);
+					$allergensText = implode("\n",$allergensTextLines); // index 0 has an unnecessary header, we just read everything after the first line
 				}
 			}
 			

@@ -113,7 +113,7 @@ $individualInformationPanel = getExtFormPanel("Individual Information", array(
 	getExtComponent("UPC", getEncodedUpcCode($singleItemRow[$upcKey])),
 	getExtComponent("Gross Weight", $singleItemRow[$unitWeightOzKey] . " oz / " . $singleItemRow[$unitWeightGKey] .  " g"),
 	getExtComponent("Ingredient Statment", $singleItemRow[$ingredientsKey]),
-	getExtComponent("Allergen Statment", $singleItemRow[$allergensKey]),
+	getExtComponent("Allergen Statment", nl2br($singleItemRow[$allergensKey])),
 	getExtComponent("Nutritional Data", "<img src=\"/dynamicPages/getImage/?id=$singleItemRow[$usNutritionLabelImageIdKey]\" width=\"250\"/>"),
 	getExtComponent("Frozen Shelf Life", $singleItemRow[$frozenShelfLifeKey]),
 	getExtComponent("Frozen Temp Range", $singleItemRow[$frozenTemperatureRangeKey]),
