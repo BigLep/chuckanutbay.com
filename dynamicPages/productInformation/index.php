@@ -20,10 +20,11 @@ if (!$idBase) {
 $itemNumberKey = "itemNumber";
 $upcKey = "upc";
 $descriptionKey = "description";
-$grossWeightKey = "grossWeight";
+$grossWeightLbKey = "grossWeightLb";
 $packKey = "pack";
 $caseCubeKey = "caseCube";
-$unitWeightKey = "unitWeight";
+$unitWeightOzKey = "unitWeightOz";
+$unitWeightGKey = "unitWeightG";
 // quickbook_item_supplements
 $tagLineKey = "tagLine";
 $caseDimensionsKey = "caseDimensions";
@@ -49,11 +50,12 @@ $kosherStatusKey = "kosherStatus";
 $quickBooksItemIdQuery = createSqlQuery(
 	"SELECT qbi.id as '$itemNumberKey'",
 	     ", qbi.pack as '$packKey'",
-		 ", qbi.unit_weight as '$unitWeightKey'",
+		 ", qbi.unit_weight_oz as '$unitWeightOzKey'",
+		 ", qbi.unit_weight_g as '$unitWeightGKey'",
 		 ", qbi.case_cube as '$caseCubeKey'",
 	     ", qbi.upc as '$upcKey'",
 		 ", qbi.description as '$descriptionKey'",
-		 ", qbi.gross_weight as '$grossWeightKey'",
+		 ", qbi.gross_weight_lb as '$grossWeightLbKey'",
 		 ", qbis.tag_line as '$tagLineKey'",
 		 ", qbis.case_dimensions as '$caseDimensionsKey'",
 		 ", qbis.cases_per_pallet_layer as '$casesPerPalletLayerKey'",
@@ -109,7 +111,7 @@ array_push($extPanels, $generalInformationPanel);
 $individualInformationPanel = getExtFormPanel("Individual Information", array(
 	getExtComponent("Item Number", $singleItemRow[$itemNumberKey]),
 	getExtComponent("UPC", getEncodedUpcCode($singleItemRow[$upcKey])),
-	getExtComponent("Gross Weight (oz.)", $singleItemRow[$unitWeightKey]),
+	getExtComponent("Gross Weight", $singleItemRow[$unitWeightOzKey] . " oz / " . $singleItemRow[$unitWeightGKey] .  " g"),
 	getExtComponent("Ingredient Statment", $singleItemRow[$ingredientsKey]),
 	getExtComponent("Allergen Statment", $singleItemRow[$allergensKey]),
 	getExtComponent("Nutritional Data", "<img src=\"/dynamicPages/getImage/?id=$singleItemRow[$usNutritionLabelImageIdKey]\" width=\"250\"/>"),
@@ -136,7 +138,7 @@ foreach ($packToRowMap as $pack => $multipleItemRow) {
 	$groupInformationPanel = getExtFormPanel("Group Information ($pack)", array(
 		getExtComponent("Item Number", $multipleItemRow[$itemNumberKey]),
 		getExtComponent("UPC", getEncodedUpcCode($multipleItemRow[$upcKey])),
-		getExtComponent("Gross Weight (lbs.)", $multipleItemRow[$grossWeightKey]),
+		getExtComponent("Gross Weight (lbs.)", $multipleItemRow[$grossWeightLbKey]),
 		getExtComponent("Pack / Unit", "$multipleItemRow[$packKey] / $multipleItemRow[$unitWeightKey]"),
 		getExtComponent("Case Cube", $multipleItemRow[$caseCubeKey]),
 		getExtComponent("Ti x Hi", "$multipleItemRow[$casesPerPalletLayerKey] / $multipleItemRow[$caseLayersPerPalletKey]"),

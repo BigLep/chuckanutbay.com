@@ -71,7 +71,7 @@
 		$descriptionIndex = array_search("Description", $headerRow);
 		$priceIndex = array_search("Price", $headerRow);
 		$upcIndex = array_search("UPC / GTIN", $headerRow);
-		$grossWeightIndex = array_search("Gross Wt (lbs)", $headerRow);
+		$grossWeightLbIndex = array_search("Gross Wt (lbs)", $headerRow);
 		$packUnitIndex = array_search("Pack/Unit", $headerRow);
 		$caseCubeIndex = array_search("Case Cube", $headerRow);
 		// attempt to import the remaining rows
@@ -85,21 +85,21 @@
 				$description = $row[$descriptionIndex];
 				$price = $row[$priceIndex];
 				$upc = $row[$upcIndex];
-				$grossWeight = $row[$grossWeightIndex] ? $row[$grossWeightIndex] : 0;
+				$grossWeightLb = $row[$grossWeightLbIndex] ? $row[$grossWeightLbIndex] : 0;
 				// Get the pack and unit, which are one columns.
 				// We initialize them to zero, but will update their value if we have valid data within the column.
 				$pack = 0;
-				$unitWeight = 0;
+				$unitWeightOz = 0;
 				// attempts to pull out the pack and unit from the column.
 				// Example column value to match against: "1 / 5.5 oz""
 				$matched = preg_match("/^([0-9]+) \/ ([0-9.]+) oz$/", $row[$packUnitIndex], $matchGroups);
 				if ($matched) {
 					$pack = $matchGroups[1];
-					$unitWeight = $matchGroups[2];
+					$unitWeightOz = $matchGroups[2];
 				}
 				$caseCube = $row[$caseCubeIndex];
 				// udpate the database with the information extracte from the row
-				insertOrUpdateQuickBooksItem($itemId, $description, $price, $upc, $grossWeight, $pack, $unitWeight, $caseCube);
+				insertOrUpdateQuickBooksItem($itemId, $description, $price, $upc, $grossWeightLb, $pack, $unitWeightOz, $caseCube);
 			}
 		}
 		// close the file
@@ -114,29 +114,34 @@
 	 * @param $description String
 	 * @param $price Decimal
 	 * @param $upc String
-	 * @param $grossWeight Decimal
+	 * @param $grossWeightLb Decimal
 	 * @param $pack Integer
-	 * @param $unitWeight Decimal
+	 * @param $unitWeightOz Decimal
 	 * @param $caseCube Decimal
 	 */
-	function insertOrUpdateQuickBooksItem($id, $description, $price, $upc, $grossWeight, $pack, $unitWeight, $caseCube) {
+	function insertOrUpdateQuickBooksItem($id, $description, $price, $upc, $grossWeightLb, $pack, $unitWeightOz, $caseCube) {
 		echo("\tInserting/updating QuickBooks item:\n");
 		echoWithIndentAndCutoff("id", $id, "\t\t", 100);
 		echoWithIndentAndCutoff("description", $description, "\t\t", 100);
 		echoWithIndentAndCutoff("price", $price, "\t\t", 100);
 		echoWithIndentAndCutoff("upc", $upc, "\t\t", 100);
-		echoWithIndentAndCutoff("grossWeight", $grossWeight, "\t\t", 100);
+		echoWithIndentAndCutoff("grossWeightLb", $grossWeightLb, "\t\t", 100);
 		echoWithIndentAndCutoff("pack", $pack, "\t\t", 100);
-		echoWithIndentAndCutoff("unitWeight", $unitWeight, "\t\t", 100);
+		echoWithIndentAndCutoff("unitWeightOz", $unitWeightOz, "\t\t", 100);
+		// The gross weight in grams is not in the file, but we can calculate it from the gross weight in ounces.
+		// There are 28.35 g per 1 oz.
+		$unitWeightG = $unitWeightOz * 28.35;
+		echoWithIndentAndCutoff("unitWeightG", $unitWeightG, "\t\t", 100);
 		echoWithIndentAndCutoff("caseCube", $caseCube, "\t\t", 100);
 		
 		$itemId = mysql_real_escape_string($id);
 		$description = mysql_real_escape_string($description);
 		$price = mysql_real_escape_string($price);
 		$upc = mysql_real_escape_string($upc);
-		$grossWeight = mysql_real_escape_string($grossWeight);
+		$grossWeightLb = mysql_real_escape_string($grossWeightLb);
 		$pack = mysql_real_escape_string($pack);
-		$unitWeight = mysql_real_escape_string($unitWeight);
+		$unitWeightOz = mysql_real_escape_string($unitWeightOz);
+		$unitWeightG = mysql_real_escape_string($unitWeightG);
 		$caseCube = mysql_real_escape_string($caseCube);
 		$caseCube = empty($caseCube) ? 'null' : $caseCube;
 
@@ -149,18 +154,19 @@
 		if (mysql_num_rows($result) == 0) { // quickbooks_item with this id doesn't exist
 			$insertQuery = 
 				"INSERT INTO quickbooks_items " .
-				"(id, description, price, upc, gross_weight, pack, unit_weight, case_cube, quickbooks_item_supplement_id, nutrition_label_id) " .
+				"(id, description, price, upc, gross_weight_lb, pack, unit_weight_oz, unit_weight_g, case_cube, quickbooks_item_supplement_id, nutrition_label_id) " .
 				"VALUES " .
-				"('$id', '$description', $price, '$upc', $grossWeight, $pack, $unitWeight, $caseCube, '$id', '$id')";
+				"('$id', '$description', $price, '$upc', $grossWeightLb, $pack, $unitWeightOz, $unitWeightG, $caseCube, '$id', '$id')";
 			queryDb($insertQuery);
 		} else { // a quickbooks_item with this id already exists
 			$updateQuery =
 				"UPDATE quickbooks_items " .
 				"SET description='$description', 
 				     price=$price, upc='$upc', 
-					 gross_weight=$grossWeight, 
+					 gross_weight_lb=$grossWeightLb, 
 					 pack=$pack, 
-					 unit_weight=$unitWeight,
+					 unit_weight_oz=$unitWeightOz,
+					 unit_weight_g=$unitWeightG,
 					 case_cube=$caseCube, 
 					 quickbooks_item_supplement_id='$id', 
 					 nutrition_label_id='$id' " .
