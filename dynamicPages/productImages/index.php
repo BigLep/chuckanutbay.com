@@ -76,13 +76,13 @@ $productType = $singleItemRow[$productTypeKey];
 
 $productImages = array();
 if (doesProductImageExist($productType, $size, $idBase,"Marketing1-LowRes")){
-	array_push($productImages, getExtComponent("Photo 1", getProductImageHtml($productType, $size, $idBase,"marketing1-LowRes")));
+	array_push($productImages, getExtComponent("Photo 1", getProductImageHtml($productType, $size, $idBase,"Marketing1-LowRes")));
 }
 if (doesProductImageExist($productType, $size, $idBase,"Marketing2-LowRes")){
-	array_push($productImages, getExtComponent("Photo 2", getProductImageHtml($productType, $size, $idBase,"marketing2-LowRes")));
+	array_push($productImages, getExtComponent("Photo 2", getProductImageHtml($productType, $size, $idBase,"Marketing2-LowRes")));
 }
 if (doesProductImageExist($productType, $size, $idBase,"Marketing3-LowRes")){
-	array_push($productImages, getExtComponent("Photo 3", getProductImageHtml($productType, $size, $idBase,"marketing3-LowRes")));
+	array_push($productImages, getExtComponent("Photo 3", getProductImageHtml($productType, $size, $idBase,"Marketing3-LowRes")));
 }
 if (doesProductImageExist($productType, $size, $idBase,"Packaged-LowRes")){
 	array_push($productImages, getExtComponent("Packaging", getProductImageHtml($productType, $size, $idBase,"Packaged-LowRes")));
