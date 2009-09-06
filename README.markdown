@@ -9,3 +9,6 @@ Error logs can be viewed at: http://loeppky.com:2082/frontend/x3/stats/errlog.ht
 
 # Markdown Syntax #
 This file should be modified using Markdown syntax.  You can learn more about it here: http://daringfireball.net/projects/markdown/syntax
+
+# Git Help #
+Making files executable: http://www.kernel.org/pub/software/scm/git/docs/git-update-index.html
