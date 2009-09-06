@@ -5,9 +5,11 @@
 # As dynamicPages/common/databaseConnection.php is not stored on GitHub,
 # it's expected that the file already exist or be manually copied.
 
+# Get the absolute path to the scriptDir.
 scriptDir=`dirname $0`
+scriptDir=`readlink -f $scriptDir`
 
-installDir=$1
+installDir=`readlink -f $1`
 echo "Installing latest GitHub to: $installDir"
 mkdir $installDir
 cd $installDir
@@ -35,7 +37,7 @@ echo
 echo "Copying content into to $installDir"
 rsync -av \
 	--include-from=${scriptDir}/installGitHubToDir-includes.txt \
-	. ../
+	. ${installDir}/
 echo
 
 # Cleanup

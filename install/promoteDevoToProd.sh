@@ -3,8 +3,9 @@
 # This script will promote the dynamic code from DEVO to PROD.
 
 scriptDir=`dirname $0`
+scriptDir=`readlink -f $scriptDir`
 
-prodDir=$1
+prodDir=`readlink -f $1`
 devoDir=$prodDir/DEVO
 
 echo "Promoting from $devoDir to $prodDir"
