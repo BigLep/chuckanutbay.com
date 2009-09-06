@@ -26,11 +26,12 @@ rm $downloadFileZip
 echo
 
 # Set the directory permissions
-echo "Setting directory permissons"
+echo "Setting file/directory permissons to 755"
 downloadDir=`ls | grep 'BigLep-chuckanutbay.com-'`
 cd $downloadDir
-find . -type d -exec chmod 755 {} \;
-find . -type f -name '*.php' -exec chmod 755 {} \;
+find . -type d -print -exec chmod 755 {} \;
+find . -type f -name '*.php' -print -exec chmod 755 {} \;
+find . -type f -name '*.sh' -print -exec chmod 755 {} \;
 echo
 
 # Copy the contents of Applications and dynamicPages
