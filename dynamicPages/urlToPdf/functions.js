@@ -39,7 +39,9 @@ function showPdfDownloadWindow(pdfPath) {
 function getDomHtml() {
 	var html = document.getElementsByTagName('html')[0].innerHTML;
 	html = stripScriptTags(html);
-	html = makeLinksAbsolute(html);
+	html = stripObjectTags(html);
+	html = makeImageLinksAbsolute(html);
+	html = makeCssLinksAbsolute(html);
 	html = '<html>' + html + '</html>';
 	return html;
 }
@@ -55,30 +57,76 @@ function stripScriptTags(html) {
 }
 
 /**
- * @param {Object} html HTML to make links absolute for.
- * @return {String} provided HTML with all relative image links converted to be absolute.
+ * @param {Object} html HTML to strip "script" tags from.
+ * @return {String} provided HTML with all "script" tags stripped.
  */
-function makeLinksAbsolute(html) {
-	var newHtml = '';
-	var host = document.location.href;
-	var regex = /<img([^>]*)? src=([\'\"])(.*?)\2([^>]*)?>((?:\n|\r|.)*?)(<\/img>)?/ig;
-	while((match = regex.exec(html))) {
-		newHtml += RegExp.leftContext;
-        var srcUrl = match[3];
-		var newSrcUrl = toAbsoluteLink(srcUrl, host);
-		newHtml += '<img' + emptyIfUndefined(match[1]) + ' src="' + newSrcUrl + '"' + emptyIfUndefined(match[4]) + '>' + emptyIfUndefined(match[5]) + emptyIfUndefined(match[6]);
-		newHtml += RegExp.rightContext;
-    }
-	// If our RegEx didn't match the HTML input, just return the HTML input.
-	return newHtml ? newHtml : html;
+function stripObjectTags(html) {
+	var regex = /(?:<object([^>]*)?>)((\n|\r|.)*?)(?:<\/object>)/ig;
+	return html.replace(regex, '');
 }
 
 /**
- * @param {String} string String to evaluate.
+ * @param {Object} html HTML to make links absolute for.
+ * @return {String} provided HTML with all relative image links converted to be absolute.
+ */
+function makeImageLinksAbsolute(html) {
+	var newHtml = '';
+	var host = document.location.href;
+	var regex = /<img([^>]*)? src=([\'\"])(.*?)\2([^>]*)?>((?:\n|\r|.)*?)(<\/img>)?/gim;
+	var matches;
+	var searchStrs = [];
+	var replaceStrs = [];
+	while((matches = regex.exec(html))) {
+		searchStrs.push(matches[0]);
+        var srcUrl = matches[3];
+		var newSrcUrl = toAbsoluteLink(srcUrl, host);
+		replaceStrs.push('<img' + emptyIfUndefined(matches[1]) + ' src="' + newSrcUrl + '"' + emptyIfUndefined(matches[4]) + '>' + emptyIfUndefined(matches[5]) + emptyIfUndefined(matches[6]));
+    }
+	return replaceStrings(html, searchStrs, replaceStrs);
+}
+
+/**
+ * @param {Object} html HTML to make links absolute for.
+ * @return {String} provided HTML with all relative css links converted to be absolute.
+ */
+function makeCssLinksAbsolute(html) {
+	var newHtml = '';
+	var host = document.location.href;
+	var regex = /<link([^>]*)? href=([\'\"])(.*?)\2([^>]*)?>((?:\n|\r|.)*?)(<\/link>)?/gim;
+	var matches;
+	var searchStrs = [];
+	var replaceStrs = [];
+	while((matches = regex.exec(html))) {
+		searchStrs.push(matches[0]);
+        var hrefUrl = matches[3];
+		var newHrefUrl = toAbsoluteLink(hrefUrl, host);
+		replaceStrs.push('<link' + emptyIfUndefined(matches[1]) + ' href="' + newHrefUrl + '"' + emptyIfUndefined(matches[4]) + '>' + emptyIfUndefined(matches[5]) + emptyIfUndefined(matches[6]));
+    }
+	return replaceStrings(html, searchStrs, replaceStrs);
+}
+
+/**
+ * For every searchStr found within str, replaces it with the matching replaceStr.
+ * @param {String} str
+ * @param {String} searchStrs
+ * @param {String} replaceStrs
+ * @return {String} For every searchStr found within str, replaces it with the matching replaceStr.
+ * The result is returned.
+ */
+function replaceStrings(str, searchStrs, replaceStrs) {
+	var newStr = str;
+	for (var i = 0; i < searchStrs.length; i++) {
+		newStr = newStr.replace(searchStrs[i], replaceStrs[i]);
+	}
+	return newStr;
+}
+
+/**
+ * @param {String} str String to evaluate.
  * @return {String} The provided string if it is non-null, otherwise return the empty string.
  */
-function emptyIfUndefined(string) {
-	return match ? match : '';
+function emptyIfUndefined(str) {
+	return str ? str : '';
 }
 
 /**
