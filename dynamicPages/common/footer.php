@@ -1,3 +1,7 @@
+<?php
+require_once("setUpEnvironment.php");
+if (isProduction()) {
+?>
 	<!-- Google Analytics Tracking -->
 	<script type="text/javascript">
 		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -9,5 +13,8 @@
 			pageTracker._trackPageview();
 		} catch(err) {}
 	</script>
+<?php
+}
+?>
 	</body>
 </html>

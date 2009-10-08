@@ -1,3 +1,7 @@
+# Setup #
+1. Install using install/index.php.
+2. Setup dynamicPages/common/setUpEnvironment.php.  dynamicPages/common/setUpEnvironment-example.php can be used as an example.
+
 # Code Reviews #
 1. Install Git: http://github.com/guides/setting-up-a-remote-repository-using-github-and-osx
 2. Download upload.py from: http://codereview.loeppky.com/static/upload.py 

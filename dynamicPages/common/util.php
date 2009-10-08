@@ -1,5 +1,17 @@
 <?php
 	/*#######################################################################*
+	 * File helper functions
+	 *#######################################################################*/
+	/**
+	 * @param String $fileAbsolutePath
+	 * @return Path of the provided file's directory, from the document root.
+	 */
+	function getDirectoryPathFromRoot($fileAbsolutePath) {
+		return str_replace($_SERVER['DOCUMENT_ROOT'], '', dirname($fileAbsolutePath));
+	}
+	
+	
+	/*#######################################################################*
 	 * SQL helper functions
 	 *#######################################################################*/
 	/**
@@ -176,7 +188,7 @@
 	 * @param String $imageType Valid values include: Label, Label1, CaseLabel, Marketing1, Marketing2, Marketing3, and Packaged 
 	 * @return File path for the corresponding product image.
 	 */
-	function getImagePath($productType, $size, $idBase, $imageType) {
+	function getProductImagePath($productType, $size, $idBase, $imageType) {
 		return "../../Images/Products/$productType/$size/$idBase-$imageType.jpg";
 	}
 	
@@ -188,7 +200,7 @@
 	 * @return HTML Code for the given image Type
 	 */
 	function getProductImageHtml($productType, $size, $idBase, $imageType) {
-		return "<img src= \"" . getImagePath($productType, $size, $idBase, $imageType) ."\" width=\"250\"/>";
+		return "<img src= \"" . getProductImagePath($productType, $size, $idBase, $imageType) ."\" width=\"250\"/>";
 	}
 	
 	/**
@@ -199,7 +211,7 @@
 	 * @return True of False if the image exists of not
 	 */
 	function doesProductImageExist($productType, $size, $idBase, $imageType) {
-		return file_exists(getImagePath($productType, $size, $idBase, $imageType));
+		return file_exists(getProductImagePath($productType, $size, $idBase, $imageType));
 	}
 
 ?>
