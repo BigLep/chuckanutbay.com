@@ -17,8 +17,8 @@
 		if (isProduction()) {
 			return array(
 				"host" => "localhost",
-				"login" => "root", 
-				"password" => "root",
+				"login" => "FILL-ME-IN", 
+				"password" => "FILL-ME-IN",
 				"name" => "loeppky_chuckanutbayextra"
 			);
 		} else {
@@ -36,6 +36,6 @@
 	 * This file should not be checked in to source control.
 	 */
 	function getPdfServiceKey() {
-		return "93787a37-2585-4e99-982e-c96561a6dd90";
+		return "FILL-ME-IN";
 	}
 ?>
