@@ -10,6 +10,7 @@
 				text-align:center;
 				font-size : 20px;
 				padding : 5px;
+				background-color : white;
 			}
 			
 			.download-pdf .pdf-icon {

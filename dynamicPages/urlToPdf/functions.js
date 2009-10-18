@@ -6,7 +6,7 @@
 function showPdfDownloadWindow(pdfPath) {
 	var fileName = pdfPath.split('/').pop();
 	var window = new Ext.Window({
-		title : 'Save As PDF',
+		title : 'Download PDF (click on link)',
 		iconCls : 'pdf-icon',
 		html : [
 			'<div class="download-pdf">',
@@ -17,6 +17,8 @@ function showPdfDownloadWindow(pdfPath) {
 				'<a href="' + pdfPath + '">', 
 					'<span>' + fileName + '</span>',
 				'</a>',
+				'<br/>',
+				'<span>(click on link above)</span>',
 			'</div>'
 		].join('\n'),
 		buttonAlign : 'center',
