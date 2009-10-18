@@ -1,9 +1,9 @@
 <?php
-    // create the database connection and import common methods
+	// create the database connection and import common methods
 	require_once("../common/databaseConnection.php");
 	require_once("../common/util.php");
 	require_once("common.php");
-	require_once("../urlToPdf/convertToPdf.php");
+	require_once("../urlToPdf/convertToPdf-pdfonline.php");
 	
 	$id = htmlspecialchars($_POST["id"]);
 	$idBase = getItemIdBase($id);
@@ -41,14 +41,30 @@
 	$productType = $row[$productTypeKey];
 	$size = $row[$sizeKey];
 	
-	$pdfPath = getPdfPath($productType, $size);
-	$params = array("html" => $html);
+	$htmlForPdfPath = getHtmlForPdfPath($productType, $size);
+	mkFileDirs($htmlForPdfPath);
+	file_put_contents($htmlForPdfPath, $html);
 	
-	if (!convertToPdf($params, $pdfPath, $errorMessage)) {
+	$htmlForPdfUrl = "http://" . $_SERVER['SERVER_NAME'] . "/" . getDirectoryPathFromRoot(__FILE__) . "/$htmlForPdfPath";
+	
+	$pdfPath = getPdfPath($productType, $size);
+	$tmpPdfPath = $pdfPath . ".tmp";
+	
+	if (!convertToPdf($htmlForPdfUrl, $tmpPdfPath, $errorMessage)) {
 		echo(implode("\n", array(
 			"PDF generation failed because: $errorMessage",
-			"PDF path: $pdfPath",
+			"PDF path: $tmpPdfPath",
+			"PDF HTML URL: $htmlForPdfUrl",
 			"HTML: $html"
 		)));
+		unlink($tmpPdfPath);
+		return;
 	}
+	
+	if (file_exists($pdfPath)) {
+		$archivedPdfPath = getArchivedPdfPath($productType, $size);
+		mkFileDirs($archivedPdfPath);
+		rename($pdfPath, $archivedPdfPath);
+	}
+	rename($tmpPdfPath, $pdfPath);
 ?>

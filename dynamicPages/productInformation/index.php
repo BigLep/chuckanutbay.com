@@ -60,11 +60,11 @@ $ksLastModifiedTimeKey = "ks$lastModifiedTimePostfixKey";
 // Query the database for all of the columns below for every item that has the idBase.
 $quickBooksItemIdQuery = createSqlQuery(
 	"SELECT qbi.id as '$itemNumberKey'",
-	     ", qbi.pack as '$packKey'",
+		 ", qbi.pack as '$packKey'",
 		 ", qbi.unit_weight_oz as '$unitWeightOzKey'",
 		 ", qbi.unit_weight_g as '$unitWeightGKey'",
 		 ", qbi.case_cube as '$caseCubeKey'",
-	     ", qbi.upc as '$upcKey'",
+		 ", qbi.upc as '$upcKey'",
 		 ", qbi.description as '$descriptionKey'",
 		 ", qbi.gross_weight_lb as '$grossWeightLbKey'",
 		 ", qbis.tag_line as '$tagLineKey'",
@@ -229,9 +229,6 @@ if (file_exists($pdfPath)) {
 	} else {
 		$pdfExists = false;
 	}
-	if (!$pdfExists) { // The PDF should be removed since it has outdated information.
-		unlink($pdfPath);
-	}
 } else {
 	$pdfExists = false;
 }
@@ -301,7 +298,7 @@ if (!($shouldPrint || $shouldSaveAsPdf)) {
 				xtype : 'container',
 				layout : 'table',
 				layoutConfig: {
-				    columns: 1
+					columns: 1
 				}
 			});
 		} else {

@@ -2,9 +2,9 @@
 	/**
 	 * @return {Boolean} true if this is a production environemnt, false if not. 
 	 */
-    function isProduction() {
-    	return false;
-    }
+	function isProduction() {
+		return false;
+	}
 	
 	/**
 	 * @return array with these keys:
@@ -32,10 +32,21 @@
 	}
 	
 	/**
-	 * @return API key to use with htm2pdf.co.uk web service.
-	 * This file should not be checked in to source control.
+	 * @return Credentials to use with pdfonline.com service.
 	 */
-	function getPdfServiceKey() {
-		return "FILL-ME-IN";
+	function getPdfOnlineCredentials() {
+		return array(
+			"author_id" => "FILL-ME-IN",
+			"username" => "FILL-ME-IN"
+		);
+	}
+	
+	/**
+	 * @return Credentials use with htm2pdf.co.uk web service.
+	 */
+	function getHtm2PdfCredentials() {
+		return array(
+			"key" => "FILL-ME-IN"
+		);
 	}
 ?>

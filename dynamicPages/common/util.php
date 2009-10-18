@@ -10,6 +10,20 @@
 		return str_replace($_SERVER['DOCUMENT_ROOT'], '', dirname($fileAbsolutePath));
 	}
 	
+	/**
+	 * Creates all parent directories of the provided file if they don't exist.
+	 * @param String $filePath
+	 * @return true if the parent directories exist; false if not.
+	 */
+	function mkFileDirs($filePath) {
+		$dirPath = dirname($filePath);
+		// Only create the parent directories if they don't exist, so that logs aren't spammed with warnings.
+		if (!file_exists($dirPath)) {
+			mkdir(dirname($filePath), 0777, true);
+		}
+		return file_exists($dirPath);
+	}
+	
 	
 	/*#######################################################################*
 	 * SQL helper functions
