@@ -3,3 +3,4 @@
 */processed*
 */productInformation/htmlForPdfs*
 */productInformation/pdfs*
+*/Images/*
