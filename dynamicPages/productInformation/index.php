@@ -174,7 +174,7 @@ foreach ($packToRowMap as $pack => $multipleItemRow) {
 	array_push($groupInformationComponents, getExtComponent("Item Number", $multipleItemRow[$itemNumberKey]));
 	array_push($groupInformationComponents, getExtComponent("UPC", getEncodedUpcCode($multipleItemRow[$upcKey])));
 	array_push($groupInformationComponents, getExtComponent("Gross Weight (lbs.)", $multipleItemRow[$grossWeightLbKey]));
-	array_push($groupInformationComponents, getExtComponent("Pack / Unit", "$multipleItemRow[$packKey] / $multipleItemRow[$unitWeightKey]"));
+	array_push($groupInformationComponents, getExtComponent("Pack / Unit (oz.)", "$multipleItemRow[$packKey] / $multipleItemRow[$unitWeightOzKey]"));
 	array_push($groupInformationComponents, getExtComponent("Case Cube", $multipleItemRow[$caseCubeKey]));
 	array_push($groupInformationComponents, getExtComponent("Ti x Hi", "$multipleItemRow[$casesPerPalletLayerKey] / $multipleItemRow[$caseLayersPerPalletKey]"));
 	array_push($groupInformationComponents, getExtComponent("Case (L'' X W'' X H'')", $multipleItemRow[$caseDimensionsKey]));
