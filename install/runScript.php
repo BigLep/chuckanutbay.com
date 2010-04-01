@@ -19,6 +19,10 @@
 			$command = "$recordScriptPrefixCommand ./promoteDevoToProd.sh ../";
 			system($command);
 			break;
+		case "setSugarCrmPermissions":
+			$command = "$recordScriptPrefixCommand ./setSugarCrmPermissions.sh ../";
+			system($command);
+			break;
 		default:
 			echo "id '$id' is not valid.";
 	}

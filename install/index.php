@@ -20,7 +20,8 @@ require('../dynamicPages/common/extJsIncludes.php');
 			var scriptIds = [
 				'setupDevo',
 				'installGitHubToDevo',
-				'promoteDevoToProd'
+				'promoteDevoToProd',
+				'setSugarCrmPermissions'
 			];
 			
 			for (var i = 0; i < scriptIds.length; i++) {
@@ -64,6 +65,16 @@ require('../dynamicPages/common/endHeadToBody.php');
 		</p>
 		<button id="promoteDevoToProdButton">Promote DEVO to PROD</button>
 		<div id="promoteDevoToProdOutput"></div>
+	</div>
+		
+	<div id="setSugarCrmPermissions" style="padding-bottom:25px;">
+		<h2>Set Sugar CRM Permissions</h2>
+		<p>
+			This script will set the permissions correctly for <a href="../sugar/">sugar</a>.
+			This can be done at any point without harm.
+		</p>
+		<button id="setSugarCrmPermissionsButton">Set Sugar CRM Permissions</button>
+		<div id="setSugarCrmPermissionsOutput"></div>
 	</div>
 <?php
 require('../dynamicPages/common/footer.php');
