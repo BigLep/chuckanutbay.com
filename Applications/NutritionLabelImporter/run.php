@@ -6,7 +6,7 @@
 	 * The main method for creating nutrition label records.
 	 * For all the files within a directory, will create/update nutrion_labels rows in the database.
 	 * An item id base (the part of the quickbooks_item_id before the "-1") is extracted from each file,
-	 * and then a nutritition label is created for each quickbooks_item that has that id base.
+	 * and then a nutritition label is created/updated for each id base.
 	 * @return 
 	 */
 	function main() {
@@ -91,17 +91,9 @@
 				echo("\tNo US label image exists with this base.  Skipping...\n\n");
 				continue;
 			}
-			// get QuickBooks item ids with the itemIdBase
-			$itemIds = getItemIdsWithItemIdBase($itemIdBase);
-			if (count($itemIds) == 0) {
-				echo("\tNo QuickBooks items with this base.  Skipping...\n\n");
-				continue;
-			}
-			// create nutrition labels for every item id
-			foreach ($itemIds as $itemId) {
-				// insert/update nutrition label in db
-				insertOrUpdateNutritionLabel($itemId, $usLabelImageId, $cdnLabelImageId, $ingredientsText, $allergensText);
-			}
+			
+			// insert/update nutrition label in db
+			insertOrUpdateNutritionLabel($itemIdBase, $usLabelImageId, $cdnLabelImageId, $ingredientsText, $allergensText);
 			
 			echo("\n");
 			
@@ -178,40 +170,17 @@
 		}
 		return $imageId;
 	}
-
-	/**
-	 * Gets the ids from the quickbooks_items table that have the provided base.
-	 * @return String[] of quickbook_item ids
-	 * @param $itemIdBase String 
-	 */
-	function getItemIdsWithItemIdBase($itemIdBase) {
-		// escpae the input
-		$itemIdBase = mysql_real_escape_string($itemIdBase);
-		echo("\tGetting item ids with base: \"$itemIdBase\".\n");
-		$itemIds = array(); // array of items that will be returned
-		$idBaseQuery = createSqlQuery(
-			"SELECT id", 
-			"FROM quickbooks_items",
-			"WHERE id LIKE '${itemIdBase}-%'",
-			"ORDER BY id ASC"
-		);
-		$result = queryDb($idBaseQuery);
-		while ($row = mysql_fetch_array($result)) {
-		    array_push($itemIds, $row[0]); // add each item id to the result
-		}
-		return $itemIds;
-	}
 	
 	/**
-	 * Inserts or updates a nutrition label for the provided $itemId with provided values.
+	 * Inserts or updates a nutrition label for the provided $itemIdBase with provided values.
 	 * @return nothing returned
-	 * @param $itemId String id of the quickbooks item this nutrition label is for
+	 * @param $itemIdBase String id of the quickbooks item id base this nutrition label is for
 	 * @param $usLabelImageId int id of the US label in the images table.
 	 * @param $cdnLabelImageId int id of the Canadian label in the images table.  Can be null.
 	 * @param $ingredientsText String the ingredients text for the label.
 	 * @param $allergensText String the allergens text for the label.
 	 */
-	function insertOrUpdateNutritionLabel($itemId, $usLabelImageId, $cdnLabelImageId, $ingredientsText, $allergensText) {
+	function insertOrUpdateNutritionLabel($itemIdBase, $usLabelImageId, $cdnLabelImageId, $ingredientsText, $allergensText) {
 		// if the Canadian label is empty, set it to the string of null value for updating the database
 		if (is_null($cdnLabelImageId)) {
 			$cdnLabelImageId = 'null';
@@ -221,7 +190,7 @@
 		
 		echo("\tInserting/updating nutrion label:\n");
 		$columnValuePairs = array(
-			"id" => "'$itemId'", 
+			"id" => "'$itemIdBase'", 
 			"us_label_image_id" => $usLabelImageId, 
 			"cdn_label_image_id" => $cdnLabelImageId, 
 			"ingredients" => "'$ingredientsText'", 
@@ -235,21 +204,21 @@
 		$nutritionLabelIdQuery = createSqlQuery(
 			"SELECT id",
 			"FROM nutrition_labels",
-			"WHERE id = '$itemId'"
+			"WHERE id = '$itemIdBase'"
 		);
 		$result = queryDb($nutritionLabelIdQuery);
 		
 		if (mysql_num_rows($result) == 0) { // we don't have a label for this id
-			if (empty($itemId) || empty($usLabelImageId) || empty($ingredientsText) || empty($allergensText)) {
+			if (empty($itemIdBase) || empty($usLabelImageId) || empty($ingredientsText) || empty($allergensText)) {
 				echo("\t\tRequired value is missing.  Skipping...\n");
 			}
 			$insertQuery = createSqlInsertQuery("nutrition_labels", $columnValuePairs);
 			queryDb($insertQuery);
-		} else { // a nutrition label with this itemId already exists
+		} else { // a nutrition label with this itemIdBase already exists
 			$updateQuery = createSqlQuery(
 				"UPDATE nutrition_labels",
 				createSqlSetString($columnValuePairs),
-				"WHERE id='$itemId'"
+				"WHERE id='$itemIdBase'"
 			);
 			queryDb($updateQuery);
 		}

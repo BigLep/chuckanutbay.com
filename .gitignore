@@ -1,3 +1,5 @@
-dynamicPages/common/setUpEnvironment.php
+Applications/NutritionLabelImporter/toProcess
+Applications/NutritionLabelImporter/processed
 Applications/QuickBooksItemsImporter/toProcess
 Applications/QuickBooksItemsImporter/processed
+dynamicPages/common/setUpEnvironment.php

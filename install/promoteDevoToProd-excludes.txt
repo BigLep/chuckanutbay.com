@@ -1,4 +1,5 @@
 *.log
+*/testData*
 */toProcess*
 */processed*
 */productInformation/htmlForPdfs*
