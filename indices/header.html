@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TBD</title>
+
+    <link rel="stylesheet" type="text/css" href="/indices/style-js.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+	<script type="text/javascript" src="/indices/script.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			document.title = 'Chuckant Bay Foods: ' + document.location.pathname;
+			var pathElement = $('.path');
+			pathElement.append('/');
+			var pathParts = document.location.pathname.split('/');
+			var pathPartsAccumulated = '/';
+			for (var i = 0; i < pathParts.length; i++) {
+				if (pathParts[i].length > 0) {
+					pathPartsAccumulated += pathParts[i] + '/';
+					pathElement.append('<a href="' + pathPartsAccumulated + '">' + pathParts[i] + '</a>/');
+				}
+			}
+		});
+	</script>
+
+</head>
+
+<body>
+    <div id="pagecontainer">
+        <div class="header">
+            <div class="logohtml">
+            	<a href="/"><img src="/LogoArt/logo-small.png" alt="Chuckanut Cheesecake Logo"/></a>
+            </div>
+            <div class="path"></div>
+            <div class="readme"></div>
+        </div>
