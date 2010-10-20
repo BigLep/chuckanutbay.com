@@ -5,6 +5,23 @@
 #========================================================================
 
 #========================================================================
+# Redirect all requests to chuckanutbay.com -> www.chuckanutbay.com.
+# Note that this redirect will not occur when doing doing development on one's local machine 
+# (e.g., http://localhost:8888/chuckanutbay.com/dynamicPages/productInformation/?id=2501 isn't redirected).
+# Keith Turley requested this so that all references are consistent and web site stats will be more true.
+# Steve Loeppky suggest we use chuckanutbay.com as the default, not www.chuckanutbay.com.  
+# The "www" part is really irrelevant and unneeded.  
+# A couple of posts about this: http://almaer.com/blog/time-to-get-rid-of-www and http://no-www.org/.
+# As Keith brought up though, all big corporate domains 
+# (amazon.com, nike.com, barnesandnoble.com, google.com, microsoft.com) push to the www domain.
+# We'll use www until the big guys drop it.
+# http://www.besthostratings.com/articles/force-www-htaccess.html was used as a guide.
+#========================================================================
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^chuckanutbay.com$
+RewriteRule ^(.*)$ http://www.chuckanutbay.com/$1 [R=301]
+
+#========================================================================
 # .htaccess file for Indices
 #
 # Place this file at the top of the directory tree whose directory
