@@ -17,6 +17,6 @@ for file in Images; do
 done
 echo
 
-echo "Copying database connection info:"
-rsync -av $prodDir/dynamicPages/common/databaseConnection.php $devoDir/dynamicPages/common/
+echo "Copying environment info:"
+rsync -av $prodDir/dynamicPages/common/setUpEnvironment.php $devoDir/dynamicPages/common/
 echo
