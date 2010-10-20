@@ -2,11 +2,27 @@
 1. Install using install/index.php.
 2. Setup dynamicPages/common/setUpEnvironment.php.  dynamicPages/common/setUpEnvironment-example.php can be used as an example.
 
+# Git Setup #
+1. If using Eclipse, create a chuckanutbay.com project.  If not, mdkir chuckanutbay.com.
+2. cd chuckanutbay.com
+3. git remote add github git@github.com:BigLep/chuckanutbay.com.git
+4. git fetch
+5. git checkout master
+
 # Code Reviews #
 1. Install Git: http://github.com/guides/setting-up-a-remote-repository-using-github-and-osx
 2. Download upload.py from: http://codereview.loeppky.com/static/upload.py 
 3. chmod +x upload.py
 4. upload.py -s codereview.loeppky.com --rev=HEAD
+
+# Eclipse Setup #
+* Install PHP Development Tools (http://www.eclipse.org/pdt) (see http://wiki.eclipse.org/PDT/Installation#From_Update_Site)
+* Instal Markdown plugin (http://www.winterwell.com/software/markdown-editor.php)
+
+# MAMP Setup #
+* Download MAMP: http://www.mamp.info/en/index.html
+* Symlink chuckanutbay.com directory into MAMP
+  ln -s /Volumes/Unix/Users/loeppky/Documents/EclipseWorkspace-chuckanut/chuckanutbay.com /Applications/MAMP/htdocs/
 
 # Error Logs #
 Error logs can be viewed at: http://loeppky.com:2082/frontend/x3/stats/errlog.html

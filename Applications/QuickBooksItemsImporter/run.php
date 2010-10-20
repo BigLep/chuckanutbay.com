@@ -154,9 +154,9 @@
 		if (mysql_num_rows($result) == 0) { // quickbooks_item with this id doesn't exist
 			$insertQuery = 
 				"INSERT INTO quickbooks_items " .
-				"(id, description, price, upc, gross_weight_lb, pack, unit_weight_oz, unit_weight_g, case_cube, quickbooks_item_supplement_id, nutrition_label_id) " .
+				"(id, description, price, upc, gross_weight_lb, pack, unit_weight_oz, unit_weight_g, case_cube) " .
 				"VALUES " .
-				"('$id', '$description', $price, '$upc', $grossWeightLb, $pack, $unitWeightOz, $unitWeightG, $caseCube, '$id', '$id')";
+				"('$id', '$description', $price, '$upc', $grossWeightLb, $pack, $unitWeightOz, $unitWeightG, $caseCube)";
 			queryDb($insertQuery);
 		} else { // a quickbooks_item with this id already exists
 			$updateQuery =
@@ -167,9 +167,7 @@
 					 pack=$pack, 
 					 unit_weight_oz=$unitWeightOz,
 					 unit_weight_g=$unitWeightG,
-					 case_cube=$caseCube, 
-					 quickbooks_item_supplement_id='$id', 
-					 nutrition_label_id='$id' " .
+					 case_cube=$caseCube " .
 				"WHERE id='$id'";
 			queryDb($updateQuery);
 		}
