@@ -48,7 +48,7 @@ $quickBooksItemIdQuery = createSqlQuery(
 		 ", qbis.product_type as '$productTypeKey'",
 	"FROM ((quickbooks_items qbi",  
 		 "LEFT JOIN quickbooks_item_supplements qbis ON qbi.quickbooks_item_supplement_id = qbis.id)", 
-		 "LEFT JOIN nutrition_labels nl ON qbi.nutrition_label_id = nl.id)",
+		 "LEFT JOIN nutrition_labels nl ON qbis.nutrition_label_id = nl.id)",
 	"WHERE qbi.id LIKE '$id'"
 );
 	
