@@ -1,5 +1,7 @@
 <?php
 	
+	$GRAMS_PER_OUNCE = 28.35;
+
 	main();
 	
 	/**
@@ -63,6 +65,7 @@
 	 * @param $path String path to the csv file to import
 	 */
 	function importQuickBooksItemsFromFile($path) {
+		global $GRAMS_PER_OUNCE;
 		// open the file for reading
 		$handle = fopen($path, "r");
 		// read the header row and determine the column index for the columns we're interested in
@@ -86,20 +89,22 @@
 				$price = $row[$priceIndex];
 				$upc = $row[$upcIndex];
 				$grossWeightLb = $row[$grossWeightLbIndex] ? $row[$grossWeightLbIndex] : 0;
-				// Get the pack and unit, which are one columns.
+				// Get the pack and unit, which are one column.
 				// We initialize them to zero, but will update their value if we have valid data within the column.
 				$pack = 0;
-				$unitWeightOz = 0;
+				$unitWeightG = 0;
 				// attempts to pull out the pack and unit from the column.
 				// Example column value to match against: "1 / 5.5 oz""
-				$matched = preg_match("/^([0-9]+) \/ ([0-9.]+) oz$/", $row[$packUnitIndex], $matchGroups);
+				$matched = preg_match("/^([0-9]+) \/ ([0-9.]+) ((?:oz)|g)$/", $row[$packUnitIndex], $matchGroups);
 				if ($matched) {
 					$pack = $matchGroups[1];
-					$unitWeightOz = $matchGroups[2];
+					$unitWeight = $matchGroups[2];
+					$unit = $matchGroups[3];
+					$unitWeightG = $unit == "g" ? $unitWeight : $unitWeight * $GRAMS_PER_OUNCE;
 				}
 				$caseCube = $row[$caseCubeIndex];
 				// udpate the database with the information extracte from the row
-				insertOrUpdateQuickBooksItem($itemId, $description, $price, $upc, $grossWeightLb, $pack, $unitWeightOz, $caseCube);
+				insertOrUpdateQuickBooksItem($itemId, $description, $price, $upc, $grossWeightLb, $pack, $unitWeightG, $caseCube);
 			}
 		}
 		// close the file
@@ -116,10 +121,11 @@
 	 * @param $upc String
 	 * @param $grossWeightLb Decimal
 	 * @param $pack Integer
-	 * @param $unitWeightOz Decimal
+	 * @param $unitWeightG Decimal
 	 * @param $caseCube Decimal
 	 */
-	function insertOrUpdateQuickBooksItem($id, $description, $price, $upc, $grossWeightLb, $pack, $unitWeightOz, $caseCube) {
+	function insertOrUpdateQuickBooksItem($id, $description, $price, $upc, $grossWeightLb, $pack, $unitWeightG, $caseCube) {
+		global $GRAMS_PER_OUNCE;
 		echo("\tInserting/updating QuickBooks item:\n");
 		echoWithIndentAndCutoff("id", $id, "\t\t", 100);
 		echoWithIndentAndCutoff("description", $description, "\t\t", 100);
@@ -127,10 +133,9 @@
 		echoWithIndentAndCutoff("upc", $upc, "\t\t", 100);
 		echoWithIndentAndCutoff("grossWeightLb", $grossWeightLb, "\t\t", 100);
 		echoWithIndentAndCutoff("pack", $pack, "\t\t", 100);
+		// The gross weight in ounces is not provided to this function, but we can calculate it from the gross weight in grams.
+		$unitWeightOz = $unitWeightG / $GRAMS_PER_OUNCE;
 		echoWithIndentAndCutoff("unitWeightOz", $unitWeightOz, "\t\t", 100);
-		// The gross weight in grams is not in the file, but we can calculate it from the gross weight in ounces.
-		// There are 28.35 g per 1 oz.
-		$unitWeightG = $unitWeightOz * 28.35;
 		echoWithIndentAndCutoff("unitWeightG", $unitWeightG, "\t\t", 100);
 		echoWithIndentAndCutoff("caseCube", $caseCube, "\t\t", 100);
 		
