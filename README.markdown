@@ -7,7 +7,7 @@
 2. cd chuckanutbay.com
 3. git init
 4. git remote add github git@github.com:BigLep/chuckanutbay.com.git
-5. git fetch
+5. git fetch github
 6. git checkout master
 
 # Code Reviews #
