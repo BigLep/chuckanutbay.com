@@ -5,9 +5,10 @@
 # Git Setup #
 1. If using Eclipse, create a chuckanutbay.com project.  If not, mdkir chuckanutbay.com.
 2. cd chuckanutbay.com
-3. git remote add github git@github.com:BigLep/chuckanutbay.com.git
-4. git fetch
-5. git checkout master
+3. git init
+4. git remote add github git@github.com:BigLep/chuckanutbay.com.git
+5. git fetch
+6. git checkout master
 
 # Code Reviews #
 1. Install Git: http://github.com/guides/setting-up-a-remote-repository-using-github-and-osx
