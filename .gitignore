@@ -6,5 +6,6 @@ Applications/InventoryItemsImporter/toProcess
 Applications/InventoryItemsImporter/processed
 Applications/OpenSalesOrdersImporter/toProcess
 Applications/OpenSalesOrdersImporter/processed
-dynamicPages/common/setUpEnvironment.php
+Applications/DynamicPages/productInformation/htmlForPdfs
+Applications/DynamicPages/productInformation/pdfs
 *timemachine.supported
