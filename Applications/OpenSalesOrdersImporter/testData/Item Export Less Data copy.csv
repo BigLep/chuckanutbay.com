@@ -1,0 +1,136 @@
+Ship Date,Num,P. O. #,Name,Item,Qty,Amount,Ship To City,Ship To Address 1,Ship To Address 2,Ship To State,Ship Zip
+Assembly,,,,,,,,,,,
+1/2 Sheet,,,,,,,,,,,
+96-cut,,,,,,,,,,,
+6201-2,,,,,,,,,,,
+"Jul 13, 2011",5028,92934,Alpine Distributing,1/2 Sheet:96-cut:6201-2,12,623.88,Portland,Alpine Food Distributing,4901 SE 24th Street,OR,97202
+Total 6201-2,,,,,12,623.88,,,,,
+6230-2,,,,,,,,,,,
+"Jul 13, 2011",5028,92934,Alpine Distributing,1/2 Sheet:96-cut:6230-2,12,651.96,Portland,Alpine Food Distributing,4901 SE 24th Street,OR,97202
+Total 6230-2,,,,,12,651.96,,,,,
+Total 96-cut,,,,,24,1275.84,,,,,
+Pre-cut,,,,,,,,,,,
+26001-2,,,,,,,,,,,
+"Jul 25, 2011",5032,15047610,Sysco - Seattle,1/2 Sheet:Pre-cut:26001-2,20,1172.00,Kent,Sysco,22820 54th Avenue S,WA,98032
+Total 26001-2,,,,,20,1172.00,,,,,
+Total Pre-cut,,,,,20,1172.00,,,,,
+Total 1/2 Sheet,,,,,44,2447.84,,,,,
+"3""",,,,,,,,,,,
+Bulk Pack (CBF Box),,,,,,,,,,,
+2101-18,,,,,,,,,,,
+"Jul 14, 2011",5016,53201,D.P.I. Northwest,"3"":Bulk Pack (CBF Box):2101-18",5,107.50,Tualatin,D.P.I. Northwest,12360 SW Leveton Drive,OR,97062
+"Jul 21, 2011",5030,55133,D.P.I. Northwest,"3"":Bulk Pack (CBF Box):2101-18",2,43.00,Tualatin,D.P.I. Northwest,12360 SW Leveton Drive,OR,97062
+"Jul 25, 2011",5032,15047610,Sysco - Seattle,"3"":Bulk Pack (CBF Box):2101-18",48,1093.92,Kent,Sysco,22820 54th Avenue S,WA,98032
+Total 2101-18,,,,,55,1244.42,,,,,
+2133-18,,,,,,,,,,,
+"Jul 25, 2011",5032,15047610,Sysco - Seattle,"3"":Bulk Pack (CBF Box):2133-18",1,22.79,Kent,Sysco,22820 54th Avenue S,WA,98032
+Total 2133-18,,,,,1,22.79,,,,,
+Total Bulk Pack (CBF Box),,,,,56,1267.21,,,,,
+Individual Pack,,,,,,,,,,,
+2201-12,,,,,,,,,,,
+"Jul 13, 2011",5021,231866,Peterson,"3"":Individual Pack:2201-12",30,468.00,Auburn,Peterson,1102 D Street NE,WA,98002
+"Jul 15, 2011",5023,594428,Tony's Fine Foods,"3"":Individual Pack:2201-12",44,702.24,West Sacramento,Tony's Fine Foods,3575 Reed Avenue,CA,95605
+"Jul 15, 2011",5026,48270,Monterrey Provision Co,"3"":Individual Pack:2201-12",130,2080.00,San Diego,Monterrey Provision Co,Attn: Crystal Rebelo,CA,92110
+"Jul 21, 2011",5030,55133,D.P.I. Northwest,"3"":Individual Pack:2201-12",40,624.00,Tualatin,D.P.I. Northwest,12360 SW Leveton Drive,OR,97062
+"Jul 19, 2011",5033,FAX,Edaleen Dairy,"3"":Individual Pack:2201-12",6,108.00,Lynden,Edaleen Dairy,9593 Guide Meridian,WA,98264
+"Jul 13, 2011",5035,,TEST Chuckanut Bay,"3"":Individual Pack:2201-12",1,15.38,Ferndale,TEST Chuckanut,5501 Hovander Road,WA,98248
+Total 2201-12,,,,,251,3997.62,,,,,
+2202-12,,,,,,,,,,,
+"Jul 14, 2011",5015,114034,Puratos Bakery Seattle,"3"":Individual Pack:2202-12",22,369.60,-206,Puratos,"3235 16th Ave SW, Harbor Island",,762-5400
+"Jul 13, 2011",5021,231866,Peterson,"3"":Individual Pack:2202-12",10,168.00,Auburn,Peterson,1102 D Street NE,WA,98002
+"Jul 15, 2011",5023,594428,Tony's Fine Foods,"3"":Individual Pack:2202-12",22,385.22,West Sacramento,Tony's Fine Foods,3575 Reed Avenue,CA,95605
+"Jul 15, 2011",5026,48270,Monterrey Provision Co,"3"":Individual Pack:2202-12",176,2992.00,San Diego,Monterrey Provision Co,Attn: Crystal Rebelo,CA,92110
+"Jul 14, 2011",5027,77207,King Soopers,"3"":Individual Pack:2202-12",110,1870.00,DENVER,KROGER,KING SOOPERS FROZEN IWI WHSE,CO,80239
+"Jul 15, 2011",5029,TAL062,Perkins,"3"":Individual Pack:2202-12",94,1645.00,Taunton,Perkins,630 John Hancock Road,MA,02780-1016
+"Jul 21, 2011",5030,55133,D.P.I. Northwest,"3"":Individual Pack:2202-12",20,336.00,Tualatin,D.P.I. Northwest,12360 SW Leveton Drive,OR,97062
+Total 2202-12,,,,,454,7765.82,,,,,
+2204-12,,,,,,,,,,,
+"Jul 14, 2011",5016,53201,D.P.I. Northwest,"3"":Individual Pack:2204-12",22,369.60,Tualatin,D.P.I. Northwest,12360 SW Leveton Drive,OR,97062
+Total 2204-12,,,,,22,369.60,,,,,
+2209-12,,,,,,,,,,,
+"Jul 15, 2011",5023,594428,Tony's Fine Foods,"3"":Individual Pack:2209-12",55,877.80,West Sacramento,Tony's Fine Foods,3575 Reed Avenue,CA,95605
+"Jul 15, 2011",5026,48270,Monterrey Provision Co,"3"":Individual Pack:2209-12",11,176.00,San Diego,Monterrey Provision Co,Attn: Crystal Rebelo,CA,92110
+"Jul 14, 2011",5027,77207,King Soopers,"3"":Individual Pack:2209-12",110,1870.00,DENVER,KROGER,KING SOOPERS FROZEN IWI WHSE,CO,80239
+"Jul 15, 2011",5029,TAL062,Perkins,"3"":Individual Pack:2209-12",30,486.00,Taunton,Perkins,630 John Hancock Road,MA,02780-1016
+Total 2209-12,,,,,206,3409.80,,,,,
+2209-6,,,,,,,,,,,
+"Jul 14, 2011",5020,71-1942250,Core-Mark International- Salt Lake City,"3"":Individual Pack:2209-6",528,4561.92,Salt Lake City,Core-Mark International- Salt Lake City,3130 South 1030 West,UT,84119
+Total 2209-6,,,,,528,4561.92,,,,,
+2217-1,,,,,,,,,,,
+"Jun 23, 2009",875,,Lummi Mini Mart,"3"":Individual Pack:2217-1",6,9.00,Ferndale,Lummi Mini Mart,4884 Haxton Way,WA,98248
+Total 2217-1,,,,,6,9.00,,,,,
+2217-12,,,,,,,,,,,
+"Jul 13, 2011",5021,231866,Peterson,"3"":Individual Pack:2217-12",22,343.20,Auburn,Peterson,1102 D Street NE,WA,98002
+"Jul 15, 2011",5023,594428,Tony's Fine Foods,"3"":Individual Pack:2217-12",66,1053.36,West Sacramento,Tony's Fine Foods,3575 Reed Avenue,CA,95605
+"Jul 14, 2011",5027,77207,King Soopers,"3"":Individual Pack:2217-12",132,2244.00,DENVER,KROGER,KING SOOPERS FROZEN IWI WHSE,CO,80239
+"Jul 15, 2011",5029,TAL062,Perkins,"3"":Individual Pack:2217-12",30,486.00,Taunton,Perkins,630 John Hancock Road,MA,02780-1016
+"Jul 19, 2011",5033,FAX,Edaleen Dairy,"3"":Individual Pack:2217-12",6,108.00,Lynden,Edaleen Dairy,9593 Guide Meridian,WA,98264
+Total 2217-12,,,,,256,4234.56,,,,,
+2221-1,,,,,,,,,,,
+"Jun 26, 2009",906,,Lummi Mini Mart,"3"":Individual Pack:2221-1",4,6.00,Ferndale,Lummi Mini Mart,4884 Haxton Way,WA,98248
+Total 2221-1,,,,,4,6.00,,,,,
+2221-12,,,,,,,,,,,
+"Jul 20, 2011",5018,043326-01,Unified Grocers - Oregon,"3"":Individual Pack:2221-12",21,327.60,Milwaukie,Unified Western Grocers/Froz,6433 SE Lake Road,OR,97222
+"Jul 15, 2011",5023,594428,Tony's Fine Foods,"3"":Individual Pack:2221-12",44,702.24,West Sacramento,Tony's Fine Foods,3575 Reed Avenue,CA,95605
+"Jul 21, 2011",5030,55133,D.P.I. Northwest,"3"":Individual Pack:2221-12",10,156.00,Tualatin,D.P.I. Northwest,12360 SW Leveton Drive,OR,97062
+"Jul 19, 2011",5033,FAX,Edaleen Dairy,"3"":Individual Pack:2221-12",6,108.00,Lynden,Edaleen Dairy,9593 Guide Meridian,WA,98264
+Total 2221-12,,,,,81,1293.84,,,,,
+2230-12,,,,,,,,,,,
+"Jul 13, 2011",5021,231866,Peterson,"3"":Individual Pack:2230-12",40,672.00,Auburn,Peterson,1102 D Street NE,WA,98002
+"Jul 15, 2011",5023,594428,Tony's Fine Foods,"3"":Individual Pack:2230-12",33,577.83,West Sacramento,Tony's Fine Foods,3575 Reed Avenue,CA,95605
+"Jul 14, 2011",5027,77207,King Soopers,"3"":Individual Pack:2230-12",88,1496.00,DENVER,KROGER,KING SOOPERS FROZEN IWI WHSE,CO,80239
+"Jul 15, 2011",5029,TAL062,Perkins,"3"":Individual Pack:2230-12",87,1522.50,Taunton,Perkins,630 John Hancock Road,MA,02780-1016
+"Jul 19, 2011",5033,FAX,Edaleen Dairy,"3"":Individual Pack:2230-12",6,108.00,Lynden,Edaleen Dairy,9593 Guide Meridian,WA,98264
+Total 2230-12,,,,,254,4376.33,,,,,
+2247-12,,,,,,,,,,,
+"Jul 14, 2011",5016,53201,D.P.I. Northwest,"3"":Individual Pack:2247-12",12,187.20,Tualatin,D.P.I. Northwest,12360 SW Leveton Drive,OR,97062
+"Jul 20, 2011",5018,043326-01,Unified Grocers - Oregon,"3"":Individual Pack:2247-12",12,187.20,Milwaukie,Unified Western Grocers/Froz,6433 SE Lake Road,OR,97222
+Total 2247-12,,,,,24,374.40,,,,,
+2291-12,,,,,,,,,,,
+"Jul 29, 2011",5014,6828,Garlic Jim's Famous Gourmet Pizza Inc,"3"":Individual Pack:2291-12",25,405.00,Everett,Garlic Jim's Famous Gourmet Pizza,Dwayne Northrop,WA,98204
+Total 2291-12,,,,,25,405.00,,,,,
+2294-12,,,,,,,,,,,
+"Jul 18, 2011",5031,53-1429890,CoreMark Int'l - Spokane,"3"":Individual Pack:2294-12",308,5423.88,Spokane Valley,CoreMark Int'l - Spokane,4007 N Industrial PK 1st,WA,99216
+"Jul 13, 2011",5034,Verbal,Springbrook Farms,"3"":Individual Pack:2294-12",6,95.76,Renton,Springbrook Farms,Tony Torlai,WA,98058
+Total 2294-12,,,,,314,5519.64,,,,,
+Total Individual Pack,,,,,2425,36323.53,,,,,
+Retail Pack,,,,,,,,,,,
+2374-6,,,,,,,,,,,
+"Jul 13, 2011",5021,231866,Peterson,"3"":Retail Pack:2374-6",20,1255.20,Auburn,Peterson,1102 D Street NE,WA,98002
+Total 2374-6,,,,,20,1255.20,,,,,
+2375-6,,,,,,,,,,,
+"Jul 19, 2011",5024,285-0706377,Costco Wholesale- Vendor #92843-00,"3"":Retail Pack:2375-6",60,3560.40,Sumner,Costco Depot 285,4000 - B 142nd Ave E,WA,98390
+Total 2375-6,,,,,60,3560.40,,,,,
+2377-1,,,,,,,,,,,
+"Jun 2, 2011",4964,,Costco - Shipped,"3"":Retail Pack:2377-1",14,878.64,Costco,,,WA,
+Total 2377-1,,,,,14,878.64,,,,,
+Total Retail Pack,,,,,94,5694.24,,,,,
+"Total 3""",,,,,2575,43284.98,,,,,
+"7""",,,,,,,,,,,
+24oz,,,,,,,,,,,
+7001-6,,,,,,,,,,,
+"Jul 19, 2011",5033,FAX,Edaleen Dairy,"7"":24oz:7001-6",6,216.00,Lynden,Edaleen Dairy,9593 Guide Meridian,WA,98264
+Total 7001-6,,,,,6,216.00,,,,,
+7003-6,,,,,,,,,,,
+"Jul 19, 2011",5033,FAX,Edaleen Dairy,"7"":24oz:7003-6",6,216.00,Lynden,Edaleen Dairy,9593 Guide Meridian,WA,98264
+Total 7003-6,,,,,6,216.00,,,,,
+7009-6,,,,,,,,,,,
+"Jul 19, 2011",5033,FAX,Edaleen Dairy,"7"":24oz:7009-6",4,144.00,Lynden,Edaleen Dairy,9593 Guide Meridian,WA,98264
+Total 7009-6,,,,,4,144.00,,,,,
+7010-6,,,,,,,,,,,
+"Jul 19, 2011",5033,FAX,Edaleen Dairy,"7"":24oz:7010-6",4,144.00,Lynden,Edaleen Dairy,9593 Guide Meridian,WA,98264
+Total 7010-6,,,,,4,144.00,,,,,
+7012-6,,,,,,,,,,,
+"Jul 19, 2011",5033,FAX,Edaleen Dairy,"7"":24oz:7012-6",4,144.00,Lynden,Edaleen Dairy,9593 Guide Meridian,WA,98264
+Total 7012-6,,,,,4,144.00,,,,,
+7017-6,,,,,,,,,,,
+"Jul 19, 2011",5033,FAX,Edaleen Dairy,"7"":24oz:7017-6",6,216.00,Lynden,Edaleen Dairy,9593 Guide Meridian,WA,98264
+Total 7017-6,,,,,6,216.00,,,,,
+7030-6,,,,,,,,,,,
+"Jul 19, 2011",5033,FAX,Edaleen Dairy,"7"":24oz:7030-6",6,216.00,Lynden,Edaleen Dairy,9593 Guide Meridian,WA,98264
+Total 7030-6,,,,,6,216.00,,,,,
+7040-6,,,,,,,,,,,
+"Jul 19, 2011",5033,FAX,Edaleen Dairy,"7"":24oz:7040-6",4,144.00,Lynden,Edaleen Dairy,9593 Guide Meridian,WA,98264
+Total 7040-6,,,,,4,144.00,,,,,
+7041-6,,,,,,,,,,,
+TOTAL,,,,,3095,60465.89,,,,,

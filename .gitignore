@@ -2,4 +2,9 @@ Applications/NutritionLabelImporter/toProcess
 Applications/NutritionLabelImporter/processed
 Applications/QuickBooksItemsImporter/toProcess
 Applications/QuickBooksItemsImporter/processed
+Applications/InventoryItemsImporter/toProcess
+Applications/InventoryItemsImporter/processed
+Applications/OpenSalesOrdersImporter/toProcess
+Applications/OpenSalesOrdersImporter/processed
 dynamicPages/common/setUpEnvironment.php
+*timemachine.supported

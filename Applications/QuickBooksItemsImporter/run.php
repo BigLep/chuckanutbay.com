@@ -12,8 +12,8 @@
 	 */
 	function main() {
 		// create the database connection and import common methods
-		require "../../dynamicPages/common/databaseConnection.php";
-		require "../../dynamicPages/common/util.php";
+		require "../Common/databaseConnection.php";
+		require "../Common/util.php";
 		
 		// get the files to process
 	    $dirToProcess = "toProcess/";
@@ -61,6 +61,7 @@
 	 * - Gross Wt (lbs)
 	 * - Pack/Unit
 	 * - Case Cube
+	 * - Unique Instructions
 	 * @return 
 	 * @param $path String path to the csv file to import
 	 */
@@ -77,6 +78,7 @@
 		$grossWeightLbIndex = array_search("Gross Wt (lbs)", $headerRow);
 		$packUnitIndex = array_search("Pack/Unit", $headerRow);
 		$caseCubeIndex = array_search("Case Cube", $headerRow);
+		$uniqueInstructionsIndex = array_search("Unique Instructions", $headerRow);
 		// attempt to import the remaining rows
 		while (($row = fgetcsv($handle)) !== FALSE) { // for every row in the file, parse it as CSV
 			// See if the item column has a valid id.
@@ -103,8 +105,9 @@
 					$unitWeightG = $unit == "g" ? $unitWeight : $unitWeight * $GRAMS_PER_OUNCE;
 				}
 				$caseCube = $row[$caseCubeIndex];
+				$uniqueInstructions = $row[$uniqueInstructionsIndex];
 				// udpate the database with the information extracte from the row
-				insertOrUpdateQuickBooksItem($itemId, $description, $price, $upc, $grossWeightLb, $pack, $unitWeightG, $caseCube);
+				insertOrUpdateQuickBooksItem($itemId, $description, $price, $upc, $grossWeightLb, $pack, $unitWeightG, $caseCube, $uniqueInstructions);
 			}
 		}
 		// close the file
@@ -123,8 +126,9 @@
 	 * @param $pack Integer
 	 * @param $unitWeightG Decimal
 	 * @param $caseCube Decimal
+	 * @param $uniqueInstructions String
 	 */
-	function insertOrUpdateQuickBooksItem($id, $description, $price, $upc, $grossWeightLb, $pack, $unitWeightG, $caseCube) {
+	function insertOrUpdateQuickBooksItem($id, $description, $price, $upc, $grossWeightLb, $pack, $unitWeightG, $caseCube, $uniqueInstructions) {
 		global $GRAMS_PER_OUNCE;
 		echo("\tInserting/updating QuickBooks item:\n");
 		echoWithIndentAndCutoff("id", $id, "\t\t", 100);
@@ -138,6 +142,7 @@
 		echoWithIndentAndCutoff("unitWeightOz", $unitWeightOz, "\t\t", 100);
 		echoWithIndentAndCutoff("unitWeightG", $unitWeightG, "\t\t", 100);
 		echoWithIndentAndCutoff("caseCube", $caseCube, "\t\t", 100);
+		echoWithIndentAndCutoff("uniqueInstructions", $uniqueInstructions, "\t\t", 100);
 		
 		$itemId = mysql_real_escape_string($id);
 		$description = mysql_real_escape_string($description);
@@ -149,6 +154,7 @@
 		$unitWeightG = mysql_real_escape_string($unitWeightG);
 		$caseCube = mysql_real_escape_string($caseCube);
 		$caseCube = empty($caseCube) ? 'null' : $caseCube;
+		$uniqueInstructions = mysql_real_escape_string($uniqueInstructions);
 
 		// see if there's a quickbooks_item with this ide
 		$quickBooksItemIdQuery = 
@@ -159,9 +165,9 @@
 		if (mysql_num_rows($result) == 0) { // quickbooks_item with this id doesn't exist
 			$insertQuery = 
 				"INSERT INTO quickbooks_items " .
-				"(id, description, price, upc, gross_weight_lb, pack, unit_weight_oz, unit_weight_g, case_cube) " .
+				"(id, description, price, upc, gross_weight_lb, pack, unit_weight_oz, unit_weight_g, case_cube, unique_instructions) " .
 				"VALUES " .
-				"('$id', '$description', $price, '$upc', $grossWeightLb, $pack, $unitWeightOz, $unitWeightG, $caseCube)";
+				"('$id', '$description', $price, '$upc', $grossWeightLb, $pack, $unitWeightOz, $unitWeightG, $caseCube, '$uniqueInstructions')";
 			queryDb($insertQuery);
 		} else { // a quickbooks_item with this id already exists
 			$updateQuery =
@@ -172,7 +178,8 @@
 					 pack=$pack, 
 					 unit_weight_oz=$unitWeightOz,
 					 unit_weight_g=$unitWeightG,
-					 case_cube=$caseCube " .
+					 case_cube=$caseCube,
+					 unique_instructions='$uniqueInstructions' " .
 				"WHERE id='$id'";
 			queryDb($updateQuery);
 		}

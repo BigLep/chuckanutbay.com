@@ -1,0 +1,250 @@
+"Ship Date","Num","P. O. #","Name","Item","Qty","Amount","Ship To City","Ship To Address 1","Ship To Address 2","Ship To State","Ship Zip"
+"Assembly",,,,,,,,,,,
+"1/2 Sheet",,,,,,,,,,,
+"96-cut",,,,,,,,,,,
+"6201-2",,,,,,,,,,,
+"7/13/2011","5028","092934","Alpine Distributing","1/2 Sheet:96-cut:6201-2",12,623.88,"Portland","Alpine Food Distributing","4901 SE 24th Street","OR","97202"
+"Total 6201-2",,,,,12,623.88,,,,,
+"6230-2",,,,,,,,,,,
+"7/13/2011","5028","092934","Alpine Distributing","1/2 Sheet:96-cut:6230-2",12,651.96,"Portland","Alpine Food Distributing","4901 SE 24th Street","OR","97202"
+"Total 6230-2",,,,,12,651.96,,,,,
+"Total 96-cut",,,,,24,1275.84,,,,,
+"Pre-cut",,,,,,,,,,,
+"26001-2",,,,,,,,,,,
+"7/25/2011","5032","15047610","Sysco - Seattle","1/2 Sheet:Pre-cut:26001-2",20,1172.00,"Kent","Sysco","22820 54th Avenue S","WA","98032"
+"Total 26001-2",,,,,20,1172.00,,,,,
+"Total Pre-cut",,,,,20,1172.00,,,,,
+"Total 1/2 Sheet",,,,,44,2447.84,,,,,
+"3""",,,,,,,,,,,
+"Bulk Pack (CBF Box)",,,,,,,,,,,
+"2101-18",,,,,,,,,,,
+"7/14/2011","5016","53201","D.P.I. Northwest","3"":Bulk Pack (CBF Box):2101-18",5,107.50,"Tualatin","D.P.I. Northwest","12360 SW Leveton Drive","OR","97062"
+"7/21/2011","5030","55133","D.P.I. Northwest","3"":Bulk Pack (CBF Box):2101-18",2,43.00,"Tualatin","D.P.I. Northwest","12360 SW Leveton Drive","OR","97062"
+"7/25/2011","5032","15047610","Sysco - Seattle","3"":Bulk Pack (CBF Box):2101-18",48,1093.92,"Kent","Sysco","22820 54th Avenue S","WA","98032"
+"Total 2101-18",,,,,55,1244.42,,,,,
+"2133-18",,,,,,,,,,,
+"7/25/2011","5032","15047610","Sysco - Seattle","3"":Bulk Pack (CBF Box):2133-18",1,22.79,"Kent","Sysco","22820 54th Avenue S","WA","98032"
+"Total 2133-18",,,,,1,22.79,,,,,
+"Total Bulk Pack (CBF Box)",,,,,56,1267.21,,,,,
+"Individual Pack",,,,,,,,,,,
+"2201-12",,,,,,,,,,,
+"7/13/2011","5021","231866","Peterson","3"":Individual Pack:2201-12",30,468.00,"Auburn","Peterson","1102 D Street NE","WA","98002"
+"7/15/2011","5023","594428","Tony's Fine Foods","3"":Individual Pack:2201-12",44,702.24,"West Sacramento","Tony's Fine Foods","3575 Reed Avenue","CA","95605"
+"7/15/2011","5026","048270","Monterrey Provision Co","3"":Individual Pack:2201-12",130,2080.00,"San Diego","Monterrey Provision Co","Attn: Crystal Rebelo","CA","92110"
+"7/21/2011","5030","55133","D.P.I. Northwest","3"":Individual Pack:2201-12",40,624.00,"Tualatin","D.P.I. Northwest","12360 SW Leveton Drive","OR","97062"
+"7/19/2011","5033","FAX","Edaleen Dairy","3"":Individual Pack:2201-12",6,108.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"7/13/2011","5035",,"TEST Chuckanut Bay","3"":Individual Pack:2201-12",1,15.38,"Ferndale","TEST Chuckanut","5501 Hovander Road","WA","98248"
+"Total 2201-12",,,,,251,3997.62,,,,,
+"2202-12",,,,,,,,,,,
+"7/14/2011","5015","114034","Puratos Bakery Seattle","3"":Individual Pack:2202-12",22,369.60,"(206)","Puratos","3235 16th Ave SW, Harbor Island",,"762-5400"
+"7/13/2011","5021","231866","Peterson","3"":Individual Pack:2202-12",10,168.00,"Auburn","Peterson","1102 D Street NE","WA","98002"
+"7/15/2011","5023","594428","Tony's Fine Foods","3"":Individual Pack:2202-12",22,385.22,"West Sacramento","Tony's Fine Foods","3575 Reed Avenue","CA","95605"
+"7/15/2011","5026","048270","Monterrey Provision Co","3"":Individual Pack:2202-12",176,2992.00,"San Diego","Monterrey Provision Co","Attn: Crystal Rebelo","CA","92110"
+"7/14/2011","5027","77207","King Soopers","3"":Individual Pack:2202-12",110,1870.00,"DENVER","KROGER","KING SOOPERS FROZEN IWI WHSE","CO","80239"
+"7/15/2011","5029","TAL062","Perkins","3"":Individual Pack:2202-12",94,1645.00,"Taunton","Perkins","630 John Hancock Road","MA","02780-1016"
+"7/21/2011","5030","55133","D.P.I. Northwest","3"":Individual Pack:2202-12",20,336.00,"Tualatin","D.P.I. Northwest","12360 SW Leveton Drive","OR","97062"
+"Total 2202-12",,,,,454,7765.82,,,,,
+"2204-12",,,,,,,,,,,
+"7/14/2011","5016","53201","D.P.I. Northwest","3"":Individual Pack:2204-12",22,369.60,"Tualatin","D.P.I. Northwest","12360 SW Leveton Drive","OR","97062"
+"Total 2204-12",,,,,22,369.60,,,,,
+"2209-12",,,,,,,,,,,
+"7/15/2011","5023","594428","Tony's Fine Foods","3"":Individual Pack:2209-12",55,877.80,"West Sacramento","Tony's Fine Foods","3575 Reed Avenue","CA","95605"
+"7/15/2011","5026","048270","Monterrey Provision Co","3"":Individual Pack:2209-12",11,176.00,"San Diego","Monterrey Provision Co","Attn: Crystal Rebelo","CA","92110"
+"7/14/2011","5027","77207","King Soopers","3"":Individual Pack:2209-12",110,1870.00,"DENVER","KROGER","KING SOOPERS FROZEN IWI WHSE","CO","80239"
+"7/15/2011","5029","TAL062","Perkins","3"":Individual Pack:2209-12",30,486.00,"Taunton","Perkins","630 John Hancock Road","MA","02780-1016"
+"Total 2209-12",,,,,206,3409.80,,,,,
+"2209-6",,,,,,,,,,,
+"7/14/2011","5020","71-1942250","Core-Mark International- Salt Lake City","3"":Individual Pack:2209-6",528,4561.92,"Salt Lake City","Core-Mark International- Salt Lake City","3130 South 1030 West","UT","84119"
+"Total 2209-6",,,,,528,4561.92,,,,,
+"2217-1",,,,,,,,,,,
+"6/23/2009","875",,"Lummi Mini Mart","3"":Individual Pack:2217-1",6,9.00,"Ferndale","Lummi Mini Mart","4884 Haxton Way","WA","98248"
+"Total 2217-1",,,,,6,9.00,,,,,
+"2217-12",,,,,,,,,,,
+"7/13/2011","5021","231866","Peterson","3"":Individual Pack:2217-12",22,343.20,"Auburn","Peterson","1102 D Street NE","WA","98002"
+"7/15/2011","5023","594428","Tony's Fine Foods","3"":Individual Pack:2217-12",66,1053.36,"West Sacramento","Tony's Fine Foods","3575 Reed Avenue","CA","95605"
+"7/14/2011","5027","77207","King Soopers","3"":Individual Pack:2217-12",132,2244.00,"DENVER","KROGER","KING SOOPERS FROZEN IWI WHSE","CO","80239"
+"7/15/2011","5029","TAL062","Perkins","3"":Individual Pack:2217-12",30,486.00,"Taunton","Perkins","630 John Hancock Road","MA","02780-1016"
+"7/19/2011","5033","FAX","Edaleen Dairy","3"":Individual Pack:2217-12",6,108.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"Total 2217-12",,,,,256,4234.56,,,,,
+"2221-1",,,,,,,,,,,
+"6/26/2009","906",,"Lummi Mini Mart","3"":Individual Pack:2221-1",4,6.00,"Ferndale","Lummi Mini Mart","4884 Haxton Way","WA","98248"
+"Total 2221-1",,,,,4,6.00,,,,,
+"2221-12",,,,,,,,,,,
+"7/20/2011","5018","043326-01","Unified Grocers - Oregon","3"":Individual Pack:2221-12",21,327.60,"Milwaukie","Unified Western Grocers/Froz","6433 SE Lake Road","OR","97222"
+"7/15/2011","5023","594428","Tony's Fine Foods","3"":Individual Pack:2221-12",44,702.24,"West Sacramento","Tony's Fine Foods","3575 Reed Avenue","CA","95605"
+"7/21/2011","5030","55133","D.P.I. Northwest","3"":Individual Pack:2221-12",10,156.00,"Tualatin","D.P.I. Northwest","12360 SW Leveton Drive","OR","97062"
+"7/19/2011","5033","FAX","Edaleen Dairy","3"":Individual Pack:2221-12",6,108.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"Total 2221-12",,,,,81,1293.84,,,,,
+"2230-12",,,,,,,,,,,
+"7/13/2011","5021","231866","Peterson","3"":Individual Pack:2230-12",40,672.00,"Auburn","Peterson","1102 D Street NE","WA","98002"
+"7/15/2011","5023","594428","Tony's Fine Foods","3"":Individual Pack:2230-12",33,577.83,"West Sacramento","Tony's Fine Foods","3575 Reed Avenue","CA","95605"
+"7/14/2011","5027","77207","King Soopers","3"":Individual Pack:2230-12",88,1496.00,"DENVER","KROGER","KING SOOPERS FROZEN IWI WHSE","CO","80239"
+"7/15/2011","5029","TAL062","Perkins","3"":Individual Pack:2230-12",87,1522.50,"Taunton","Perkins","630 John Hancock Road","MA","02780-1016"
+"7/19/2011","5033","FAX","Edaleen Dairy","3"":Individual Pack:2230-12",6,108.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"Total 2230-12",,,,,254,4376.33,,,,,
+"2247-12",,,,,,,,,,,
+"7/14/2011","5016","53201","D.P.I. Northwest","3"":Individual Pack:2247-12",12,187.20,"Tualatin","D.P.I. Northwest","12360 SW Leveton Drive","OR","97062"
+"7/20/2011","5018","043326-01","Unified Grocers - Oregon","3"":Individual Pack:2247-12",12,187.20,"Milwaukie","Unified Western Grocers/Froz","6433 SE Lake Road","OR","97222"
+"Total 2247-12",,,,,24,374.40,,,,,
+"2291-12",,,,,,,,,,,
+"7/29/2011","5014","6828","Garlic Jim's Famous Gourmet Pizza Inc","3"":Individual Pack:2291-12",25,405.00,"Everett","Garlic Jim's Famous Gourmet Pizza","Dwayne Northrop","WA","98204"
+"Total 2291-12",,,,,25,405.00,,,,,
+"2294-12",,,,,,,,,,,
+"7/18/2011","5031","53-1429890","CoreMark Int'l - Spokane","3"":Individual Pack:2294-12",308,5423.88,"Spokane Valley","CoreMark Int'l - Spokane","4007 N Industrial PK 1st","WA","99216"
+"7/13/2011","5034","Verbal","Springbrook Farms","3"":Individual Pack:2294-12",6,95.76,"Renton","Springbrook Farms","Tony Torlai","WA","98058"
+"Total 2294-12",,,,,314,5519.64,,,,,
+"Total Individual Pack",,,,,2425,36323.53,,,,,
+"Retail Pack",,,,,,,,,,,
+"2374-6",,,,,,,,,,,
+"7/13/2011","5021","231866","Peterson","3"":Retail Pack:2374-6",20,1255.20,"Auburn","Peterson","1102 D Street NE","WA","98002"
+"Total 2374-6",,,,,20,1255.20,,,,,
+"2375-6",,,,,,,,,,,
+"7/19/2011","5024","285-0706377","Costco Wholesale- Vendor #92843-00","3"":Retail Pack:2375-6",60,3560.40,"Sumner","Costco Depot 285","4000 - B 142nd Ave E","WA","98390"
+"Total 2375-6",,,,,60,3560.40,,,,,
+"2377-1",,,,,,,,,,,
+"6/2/2011","4964",,"Costco - Shipped","3"":Retail Pack:2377-1",14,878.64,"Costco",,,"WA",
+"Total 2377-1",,,,,14,878.64,,,,,
+"Total Retail Pack",,,,,94,5694.24,,,,,
+"Total 3""",,,,,2575,43284.98,,,,,
+"7""",,,,,,,,,,,
+"24oz",,,,,,,,,,,
+"7001-6",,,,,,,,,,,
+"7/19/2011","5033","FAX","Edaleen Dairy","7"":24oz:7001-6",6,216.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"Total 7001-6",,,,,6,216.00,,,,,
+"7003-6",,,,,,,,,,,
+"7/19/2011","5033","FAX","Edaleen Dairy","7"":24oz:7003-6",6,216.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"Total 7003-6",,,,,6,216.00,,,,,
+"7009-6",,,,,,,,,,,
+"7/19/2011","5033","FAX","Edaleen Dairy","7"":24oz:7009-6",4,144.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"Total 7009-6",,,,,4,144.00,,,,,
+"7010-6",,,,,,,,,,,
+"7/19/2011","5033","FAX","Edaleen Dairy","7"":24oz:7010-6",4,144.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"Total 7010-6",,,,,4,144.00,,,,,
+"7012-6",,,,,,,,,,,
+"7/19/2011","5033","FAX","Edaleen Dairy","7"":24oz:7012-6",4,144.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"Total 7012-6",,,,,4,144.00,,,,,
+"7017-6",,,,,,,,,,,
+"7/19/2011","5033","FAX","Edaleen Dairy","7"":24oz:7017-6",6,216.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"Total 7017-6",,,,,6,216.00,,,,,
+"7030-6",,,,,,,,,,,
+"7/19/2011","5033","FAX","Edaleen Dairy","7"":24oz:7030-6",6,216.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"Total 7030-6",,,,,6,216.00,,,,,
+"7040-6",,,,,,,,,,,
+"7/19/2011","5033","FAX","Edaleen Dairy","7"":24oz:7040-6",4,144.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"Total 7040-6",,,,,4,144.00,,,,,
+"7041-6",,,,,,,,,,,
+"7/19/2011","5033","FAX","Edaleen Dairy","7"":24oz:7041-6",4,144.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"Total 7041-6",,,,,4,144.00,,,,,
+"Total 24oz",,,,,44,1584.00,,,,,
+"24oz NO LABEL",,,,,,,,,,,
+"8001-6",,,,,,,,,,,
+"7/15/2011","5029","TAL062","Perkins","7"":24oz NO LABEL:8001-6",40,1248.00,"Taunton","Perkins","630 John Hancock Road","MA","02780-1016"
+"Total 8001-6",,,,,40,1248.00,,,,,
+"8016-6",,,,,,,,,,,
+"7/15/2011","5029","TAL062","Perkins","7"":24oz NO LABEL:8016-6",20,624.00,"Taunton","Perkins","630 John Hancock Road","MA","02780-1016"
+"Total 8016-6",,,,,20,624.00,,,,,
+"Total 24oz NO LABEL",,,,,60,1872.00,,,,,
+"32 oz",,,,,,,,,,,
+"27001-6",,,,,,,,,,,
+"7/27/2011","5025","043413-01","Unified Grocers - Oregon","7"":32 oz:27001-6",10,378.00,"Milwaukie","Unified Western Grocers/Froz","6433 SE Lake Road","OR","97222"
+"Total 27001-6",,,,,10,378.00,,,,,
+"27002-6",,,,,,,,,,,
+"7/21/2011","5030","55133","D.P.I. Northwest","7"":32 oz:27002-6",10,426.00,"Tualatin","D.P.I. Northwest","12360 SW Leveton Drive","OR","97062"
+"Total 27002-6",,,,,10,426.00,,,,,
+"27005-6",,,,,,,,,,,
+"7/21/2011","5030","55133","D.P.I. Northwest","7"":32 oz:27005-6",2,85.20,"Tualatin","D.P.I. Northwest","12360 SW Leveton Drive","OR","97062"
+"Total 27005-6",,,,,2,85.20,,,,,
+"27012-6",,,,,,,,,,,
+"7/14/2011","5016","53201","D.P.I. Northwest","7"":32 oz:27012-6",4,151.20,"Tualatin","D.P.I. Northwest","12360 SW Leveton Drive","OR","97062"
+"Total 27012-6",,,,,4,151.20,,,,,
+"27030-6",,,,,,,,,,,
+"7/27/2011","5025","043413-01","Unified Grocers - Oregon","7"":32 oz:27030-6",10,426.00,"Milwaukie","Unified Western Grocers/Froz","6433 SE Lake Road","OR","97222"
+"Total 27030-6",,,,,10,426.00,,,,,
+"27032-6",,,,,,,,,,,
+"7/20/2011","5018","043326-01","Unified Grocers - Oregon","7"":32 oz:27032-6",10,426.00,"Milwaukie","Unified Western Grocers/Froz","6433 SE Lake Road","OR","97222"
+"Total 27032-6",,,,,10,426.00,,,,,
+"27039-6",,,,,,,,,,,
+"7/20/2011","5018","043326-01","Unified Grocers - Oregon","7"":32 oz:27039-6",10,400.20,"Milwaukie","Unified Western Grocers/Froz","6433 SE Lake Road","OR","97222"
+"7/27/2011","5025","043413-01","Unified Grocers - Oregon","7"":32 oz:27039-6",10,400.20,"Milwaukie","Unified Western Grocers/Froz","6433 SE Lake Road","OR","97222"
+"7/15/2011","5026","048270","Monterrey Provision Co","7"":32 oz:27039-6",20,795.00,"San Diego","Monterrey Provision Co","Attn: Crystal Rebelo","CA","92110"
+"7/15/2011","5029","TAL062","Perkins","7"":32 oz:27039-6",15,600.00,"Taunton","Perkins","630 John Hancock Road","MA","02780-1016"
+"7/21/2011","5030","55133","D.P.I. Northwest","7"":32 oz:27039-6",10,400.20,"Tualatin","D.P.I. Northwest","12360 SW Leveton Drive","OR","97062"
+"Total 27039-6",,,,,65,2595.60,,,,,
+"Total 32 oz",,,,,111,4488.00,,,,,
+"32 oz NO LABEL",,,,,,,,,,,
+"28001-6",,,,,,,,,,,
+"7/14/2011","5015","114034","Puratos Bakery Seattle","7"":32 oz NO LABEL:28001-6",10,364.70,"(206)","Puratos","3235 16th Ave SW, Harbor Island",,"762-5400"
+"Total 28001-6",,,,,10,364.70,,,,,
+"28009-6",,,,,,,,,,,
+"7/14/2011","5015","114034","Puratos Bakery Seattle","7"":32 oz NO LABEL:28009-6",20,729.40,"(206)","Puratos","3235 16th Ave SW, Harbor Island",,"762-5400"
+"Total 28009-6",,,,,20,729.40,,,,,
+"28017-6",,,,,,,,,,,
+"7/14/2011","5015","114034","Puratos Bakery Seattle","7"":32 oz NO LABEL:28017-6",10,364.70,"(206)","Puratos","3235 16th Ave SW, Harbor Island",,"762-5400"
+"Total 28017-6",,,,,10,364.70,,,,,
+"28030-6",,,,,,,,,,,
+"7/14/2011","5015","114034","Puratos Bakery Seattle","7"":32 oz NO LABEL:28030-6",20,770.20,"(206)","Puratos","3235 16th Ave SW, Harbor Island",,"762-5400"
+"Total 28030-6",,,,,20,770.20,,,,,
+"Total 32 oz NO LABEL",,,,,60,2229.00,,,,,
+"Total 7""",,,,,275,10173.00,,,,,
+"9""",,,,,,,,,,,
+"14 Slice",,,,,,,,,,,
+"1401-1",,,,,,,,,,,
+"7/25/2011","5032","15047610","Sysco - Seattle","9"":14 Slice:1401-1",48,973.92,"Kent","Sysco","22820 54th Avenue S","WA","98032"
+"Total 1401-1",,,,,48,973.92,,,,,
+"Total 14 Slice",,,,,48,973.92,,,,,
+"16 Slice",,,,,,,,,,,
+"1609-1",,,,,,,,,,,
+"7/21/2011","5030","55133","D.P.I. Northwest","9"":16 Slice:1609-1",2,39.00,"Tualatin","D.P.I. Northwest","12360 SW Leveton Drive","OR","97062"
+"7/25/2011","5032","15047610","Sysco - Seattle","9"":16 Slice:1609-1",48,1001.28,"Kent","Sysco","22820 54th Avenue S","WA","98032"
+"Total 1609-1",,,,,50,1040.28,,,,,
+"1610-1",,,,,,,,,,,
+"7/25/2011","5032","15047610","Sysco - Seattle","9"":16 Slice:1610-1",24,500.64,"Kent","Sysco","22820 54th Avenue S","WA","98032"
+"Total 1610-1",,,,,24,500.64,,,,,
+"Total 16 Slice",,,,,74,1540.92,,,,,
+"Total 9""",,,,,122,2514.84,,,,,
+"DSD",,,,,,,,,,,
+"521-1",,,,,,,,,,,
+"9/24/2009","1800",,"Starvin Sams Mini Mart","DSD:521-1",4,5.00,"Sumas","Store #15","7519 Kendall Rd","WA",
+"Total 521-1",,,,,4,5.00,,,,,
+"Muffin",,,,,,,,,,,
+"Big Top",,,,,,,,,,,
+"346-1",,,,,,,,,,,
+"10/16/2009","2044",,"Ferndale Mini Market","DSD:Muffin:Big Top:346-1",8,10.00,"Ferndale","Ferndale Mini Market","2085 Main Streeet","WA","98248"
+"Total 346-1",,,,,8,10.00,,,,,
+"348-1",,,,,,,,,,,
+"9/24/2009","1800",,"Starvin Sams Mini Mart","DSD:Muffin:Big Top:348-1",2,2.50,"Sumas","Store #15","7519 Kendall Rd","WA",
+"Total 348-1",,,,,2,2.50,,,,,
+"Total Big Top",,,,,10,12.50,,,,,
+"Total Muffin",,,,,10,12.50,,,,,
+"Scone",,,,,,,,,,,
+"403-1",,,,,,,,,,,
+"11/25/2009","2574",,"Valley Market and Deli","DSD:Scone:403-1",4,5.00,"Bellingham","Valley Market and Deli","1945 Lake Whatcom Blvd","WA","98226"
+"Total 403-1",,,,,4,5.00,,,,,
+"404-1",,,,,,,,,,,
+"11/25/2009","2574",,"Valley Market and Deli","DSD:Scone:404-1",4,5.00,"Bellingham","Valley Market and Deli","1945 Lake Whatcom Blvd","WA","98226"
+"Total 404-1",,,,,4,5.00,,,,,
+"Total Scone",,,,,8,10.00,,,,,
+"Total DSD",,,,,22,27.50,,,,,
+"Heart",,,,,,,,,,,
+"Retail",,,,,,,,,,,
+"5247-6",,,,,,,,,,,
+"7/15/2011","5026","048270","Monterrey Provision Co","Heart:Retail:5247-6",11,187.99,"San Diego","Monterrey Provision Co","Attn: Crystal Rebelo","CA","92110"
+"Total 5247-6",,,,,11,187.99,,,,,
+"Total Retail",,,,,11,187.99,,,,,
+"Total Heart",,,,,11,187.99,,,,,
+"Tiramisu",,,,,,,,,,,
+"4009-6",,,,,,,,,,,
+"7/19/2011","5033","FAX","Edaleen Dairy","Tiramisu:4009-6",6,252.00,"Lynden","Edaleen Dairy","9593 Guide Meridian","WA","98264"
+"Total 4009-6",,,,,6,252.00,,,,,
+"4306-1",,,,,,,,,,,
+"2/17/2010","3287","106292","Puratos Bakery Portland","Tiramisu:4306-1",0,0.00,"Portland","Puratos Portland","15670 North Lombard St Bldg B","OR","97203"
+"7/14/2011","5015","114034","Puratos Bakery Seattle","Tiramisu:4306-1",40,1318.40,"(206)","Puratos","3235 16th Ave SW, Harbor Island",,"762-5400"
+"Total 4306-1",,,,,40,1318.40,,,,,
+"Total Tiramisu",,,,,46,1570.40,,,,,
+"Total Assembly",,,,,3095,60206.55,,,,,
+"Service",,,,,,,,,,,
+"GST",,,,,,,,,,,
+"6/29/2011","4997","57040271","Snowcap Enterprises Ltd.","GST","",259.34,"Burnaby","Snowcap Enterprises","5698 Trapp Ave.","BC","V3N 5G4"
+"Total GST",,,,,0,259.34,,,,,
+"Total Service",,,,,0,259.34,,,,,
+"TOTAL",,,,,3095,60465.89,,,,,

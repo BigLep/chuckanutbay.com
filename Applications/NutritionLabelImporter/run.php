@@ -11,8 +11,8 @@
 	 */
 	function main() {
 		// create the database connection and import common methods
-		require "../../dynamicPages/common/databaseConnection.php";
-		require "../../dynamicPages/common/util.php";
+		require "../Common/databaseConnection.php";
+		require "../Common/util.php";
 	
 		// get the files to process
 	    $dirToProcess = "toProcess/";
@@ -229,6 +229,6 @@
 	 * @param $fileName String name of file
 	 */
 	function isImage($fileName) {
-		return preg_match("/(jpg|gif|png)/i", $fileName);
+		return preg_match("/(jpg|gif|png|jpeg)/i", $fileName);
 	}	
 ?>
