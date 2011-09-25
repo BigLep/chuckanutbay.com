@@ -86,7 +86,7 @@ ${tomcatDir}/bin/shutdown.sh;</string>
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
 				<key>InputUUID</key>
-				<string>A5EF51E5-B1E6-4241-BAF2-90654812D9F8</string>
+				<string>2F26AE65-F9FD-42B8-A80D-987896939B11</string>
 				<key>Keywords</key>
 				<array>
 					<string>Shell</string>
@@ -96,9 +96,9 @@ ${tomcatDir}/bin/shutdown.sh;</string>
 					<string>Unix</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>21C2F0DE-4468-4967-B117-0BC2CBAA3F9A</string>
+				<string>EB880F75-A1CB-4A30-BA6D-61225DEC9910</string>
 				<key>UUID</key>
-				<string>6E5BE588-F86A-4B6C-8E33-6D3B95E1E583</string>
+				<string>EC765B57-067E-480E-B85A-5BB7F7ED2FC2</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -171,12 +171,10 @@ ${tomcatDir}/bin/shutdown.sh;</string>
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.500000:775.000000</string>
+				<string>309.500000:765.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -248,16 +246,16 @@ ${tomcatDir}/bin/shutdown.sh;</string>
 				<key>Class Name</key>
 				<string>AMQuitApplicationAction</string>
 				<key>InputUUID</key>
-				<string>69D00A50-4857-4BD7-8396-77112D883091</string>
+				<string>F451B34B-EF83-42CA-89AF-9781E4619266</string>
 				<key>Keywords</key>
 				<array>
 					<string>File</string>
 					<string>Quit</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>F8B0F125-D25B-4B7D-8B3C-7F2DC006B14D</string>
+				<string>7BC8ABC9-5248-4DFE-8F21-69CABA10AA47</string>
 				<key>UUID</key>
-				<string>BE63D541-B76A-42AB-B1D5-89F6A018C6F9</string>
+				<string>929A0F3F-201A-4661-82ED-CC9641794B57</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Finder</string>
@@ -291,12 +289,10 @@ ${tomcatDir}/bin/shutdown.sh;</string>
 						<string>1</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.500000:592.000000</string>
+				<string>309.500000:582.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Quit Application.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -382,7 +378,7 @@ exit 0;</string>
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
 				<key>InputUUID</key>
-				<string>86CBF24C-E357-4F31-BD61-D2A2DBD03B6A</string>
+				<string>31E0ADA9-1C06-4689-B08C-8A594DFB2E4F</string>
 				<key>Keywords</key>
 				<array>
 					<string>Shell</string>
@@ -392,9 +388,9 @@ exit 0;</string>
 					<string>Unix</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>8F282496-4174-40FD-8014-D264FC42AC0F</string>
+				<string>4707DF89-AD19-48C4-82C3-D3A5F4CD2A4F</string>
 				<key>UUID</key>
-				<string>F2A40EEE-EA8C-4A7D-8E0E-BF1F182BD998</string>
+				<string>1B57E257-F6DE-400E-862D-EB587E26800D</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -467,12 +463,10 @@ exit 0;</string>
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.500000:489.000000</string>
+				<string>309.500000:479.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -555,7 +549,7 @@ ${tomcatDir}/bin/startup.sh;</string>
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
 				<key>InputUUID</key>
-				<string>F4C6242B-5006-447C-A069-3E64BF99EBA8</string>
+				<string>0AE4B24A-A127-43BC-B2B7-CA3DCD0B924B</string>
 				<key>Keywords</key>
 				<array>
 					<string>Shell</string>
@@ -565,9 +559,9 @@ ${tomcatDir}/bin/startup.sh;</string>
 					<string>Unix</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>1195FECD-C09F-4B20-8CBE-DDAF54529E41</string>
+				<string>E7B084E0-E653-4006-81FB-561FF9E6FF88</string>
 				<key>UUID</key>
-				<string>58F8FA56-7E54-4C37-99F0-9AB815B1FC93</string>
+				<string>05EF1279-664D-418A-B47C-B93235B67D8E</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -640,12 +634,10 @@ ${tomcatDir}/bin/startup.sh;</string>
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.500000:306.000000</string>
+				<string>309.500000:296.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -711,16 +703,16 @@ ${tomcatDir}/bin/startup.sh;</string>
 				<key>Class Name</key>
 				<string>AMLaunchApplicationAction</string>
 				<key>InputUUID</key>
-				<string>1FEAFA53-E297-4E59-ABE5-AC5D817BF417</string>
+				<string>72879325-19D1-4A49-AB80-721497E0A504</string>
 				<key>Keywords</key>
 				<array>
 					<string>File</string>
 					<string>Open</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>A2859115-39D2-49CE-AEDB-8B15D097AC4C</string>
+				<string>864CA5EA-F2F6-460E-B334-ED1D54A5808F</string>
 				<key>UUID</key>
-				<string>302F9CDA-AAB1-49E5-ABBD-723D312EF7D0</string>
+				<string>BBD60E68-C4AE-4B35-9410-CB364375024D</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Finder</string>
@@ -741,12 +733,10 @@ ${tomcatDir}/bin/startup.sh;</string>
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.500000:123.000000</string>
+				<string>309.500000:113.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -756,39 +746,111 @@ ${tomcatDir}/bin/startup.sh;</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>89FC61E9-D1EB-4885-8A11-E138BCE34183</key>
+		<key>0BF33A7D-BDD7-46E5-901F-7CB4494812E4</key>
 		<dict>
 			<key>from</key>
-			<string>58F8FA56-7E54-4C37-99F0-9AB815B1FC93 - 58F8FA56-7E54-4C37-99F0-9AB815B1FC93</string>
+			<string>1B57E257-F6DE-400E-862D-EB587E26800D - 1B57E257-F6DE-400E-862D-EB587E26800D</string>
 			<key>to</key>
-			<string>302F9CDA-AAB1-49E5-ABBD-723D312EF7D0 - 302F9CDA-AAB1-49E5-ABBD-723D312EF7D0</string>
+			<string>05EF1279-664D-418A-B47C-B93235B67D8E - 05EF1279-664D-418A-B47C-B93235B67D8E</string>
 		</dict>
-		<key>E2398643-F257-4F91-88F5-02FE91C31CF1</key>
+		<key>178F941E-89B3-402D-ADF2-7CFFBB6CE92B</key>
 		<dict>
 			<key>from</key>
-			<string>F2A40EEE-EA8C-4A7D-8E0E-BF1F182BD998 - F2A40EEE-EA8C-4A7D-8E0E-BF1F182BD998</string>
+			<string>EC765B57-067E-480E-B85A-5BB7F7ED2FC2 - EC765B57-067E-480E-B85A-5BB7F7ED2FC2</string>
 			<key>to</key>
-			<string>58F8FA56-7E54-4C37-99F0-9AB815B1FC93 - 58F8FA56-7E54-4C37-99F0-9AB815B1FC93</string>
+			<string>929A0F3F-201A-4661-82ED-CC9641794B57 - 929A0F3F-201A-4661-82ED-CC9641794B57</string>
 		</dict>
-		<key>F3814CA6-5CFF-4C75-A23C-AC7523FA469E</key>
+		<key>3569FF2B-DE60-42E0-BFD9-574695F254DB</key>
 		<dict>
 			<key>from</key>
-			<string>6E5BE588-F86A-4B6C-8E33-6D3B95E1E583 - 6E5BE588-F86A-4B6C-8E33-6D3B95E1E583</string>
+			<string>929A0F3F-201A-4661-82ED-CC9641794B57 - 929A0F3F-201A-4661-82ED-CC9641794B57</string>
 			<key>to</key>
-			<string>BE63D541-B76A-42AB-B1D5-89F6A018C6F9 - BE63D541-B76A-42AB-B1D5-89F6A018C6F9</string>
+			<string>1B57E257-F6DE-400E-862D-EB587E26800D - 1B57E257-F6DE-400E-862D-EB587E26800D</string>
 		</dict>
-		<key>FCE606CB-0564-4612-A137-AC881807E800</key>
+		<key>5E57E6C9-2924-44F3-A165-A7BD5C3B1E3F</key>
 		<dict>
 			<key>from</key>
-			<string>BE63D541-B76A-42AB-B1D5-89F6A018C6F9 - BE63D541-B76A-42AB-B1D5-89F6A018C6F9</string>
+			<string>05EF1279-664D-418A-B47C-B93235B67D8E - 05EF1279-664D-418A-B47C-B93235B67D8E</string>
 			<key>to</key>
-			<string>F2A40EEE-EA8C-4A7D-8E0E-BF1F182BD998 - F2A40EEE-EA8C-4A7D-8E0E-BF1F182BD998</string>
+			<string>BBD60E68-C4AE-4B35-9410-CB364375024D - BBD60E68-C4AE-4B35-9410-CB364375024D</string>
 		</dict>
+	</dict>
+	<key>state</key>
+	<dict>
+		<key>AMLogTabViewSelectedIndex</key>
+		<integer>0</integer>
+		<key>libraryState</key>
+		<dict>
+			<key>actionsMajorSplitViewState</key>
+			<dict>
+				<key>expandedPosition</key>
+				<real>0.0</real>
+				<key>subviewState</key>
+				<array>
+					<string>0.000000, 0.000000, 381.000000, 503.000000, NO</string>
+					<string>0.000000, 504.000000, 381.000000, 129.000000, NO</string>
+				</array>
+			</dict>
+			<key>actionsMinorSplitViewState</key>
+			<dict>
+				<key>expandedPosition</key>
+				<real>0.0</real>
+				<key>subviewState</key>
+				<array>
+					<string>0.000000, 0.000000, 163.000000, 503.000000, NO</string>
+					<string>164.000000, 0.000000, 217.000000, 503.000000, NO</string>
+				</array>
+			</dict>
+			<key>variablesMajorSplitViewState</key>
+			<dict>
+				<key>expandedPosition</key>
+				<real>0.0</real>
+				<key>subviewState</key>
+				<array>
+					<string>0.000000, 0.000000, 350.000000, 555.000000, NO</string>
+					<string>0.000000, 556.000000, 350.000000, 148.000000, NO</string>
+				</array>
+			</dict>
+			<key>variablesMinorSplitViewState</key>
+			<dict>
+				<key>expandedPosition</key>
+				<real>0.0</real>
+				<key>subviewState</key>
+				<array>
+					<string>0.000000, 0.000000, 163.000000, 555.000000, NO</string>
+					<string>164.000000, 0.000000, 186.000000, 555.000000, NO</string>
+				</array>
+			</dict>
+		</dict>
+		<key>majorSplitViewState</key>
+		<dict>
+			<key>expandedPosition</key>
+			<real>0.0</real>
+			<key>subviewState</key>
+			<array>
+				<string>0.000000, 0.000000, 381.000000, 678.000000, NO</string>
+				<string>382.000000, 0.000000, 924.000000, 678.000000, NO</string>
+			</array>
+		</dict>
+		<key>minorSplitViewState</key>
+		<dict>
+			<key>expandedPosition</key>
+			<real>0.0</real>
+			<key>subviewState</key>
+			<array>
+				<string>0.000000, 0.000000, 924.000000, 487.000000, NO</string>
+				<string>0.000000, 497.000000, 924.000000, 162.000000, NO</string>
+			</array>
+		</dict>
+		<key>windowFrame</key>
+		<string>{{21, 100}, {1305, 755}}</string>
+		<key>workflowViewScrollPosition</key>
+		<string>{{0, 267}, {909, 487}}</string>
 	</dict>
 	<key>workflowMetaData</key>
 	<dict>
 		<key>workflowTypeIdentifier</key>
-		<string>com.apple.Automator.application</string>
+		<string>com.apple.Automator.workflow</string>
 	</dict>
 </dict>
 </plist>

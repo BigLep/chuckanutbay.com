@@ -9,3 +9,5 @@ Applications/OpenSalesOrdersImporter/processed
 Applications/DynamicPages/productInformation/htmlForPdfs
 Applications/DynamicPages/productInformation/pdfs
 *timemachine.supported
+/.project
+*error_log
