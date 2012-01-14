@@ -4,11 +4,14 @@
 
 # Git Setup #
 1. If using Eclipse, create a chuckanutbay.com project.  If not, mdkir chuckanutbay.com.
-2. cd chuckanutbay.com
-3. git init
-4. git remote add github git@github.com:BigLep/chuckanutbay.com.git
-5. git fetch github
-6. git checkout master
+<pre>
+cd chuckanutbay.com
+git init
+git remote add github git@github.com:BigLep/chuckanutbay.com.git
+git fetch github
+git checkout master
+</pre>
+
 
 # Code Reviews #
 1. Install Git: http://github.com/guides/setting-up-a-remote-repository-using-github-and-osx
@@ -23,7 +26,13 @@
 # MAMP Setup #
 * Download MAMP: http://www.mamp.info/en/index.html
 * Symlink chuckanutbay.com directory into MAMP
-  ln -s /Volumes/Unix/Users/loeppky/Documents/EclipseWorkspace-chuckanut/chuckanutbay.com /Applications/MAMP/htdocs/
+<pre>
+# Set these variables first
+projectDir=~/Documents/workspace/chuckanutbay.com
+mampRootDir=/Applications/MAMP/htdocs
+
+ln -s $projectDir $mampRootDir/
+</pre>
 
 # Error Logs #
 Error logs can be viewed at: http://loeppky.com:2082/frontend/x3/stats/errlog.html
