@@ -30,7 +30,7 @@ git checkout master
 # Set these variables first
 projectDir=~/Documents/workspace/chuckanutbay.com
 mampRootDir=/Applications/MAMP/htdocs
-
+# Run this command
 ln -s $projectDir $mampRootDir/
 </pre>
 
