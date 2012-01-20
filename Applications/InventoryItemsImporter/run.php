@@ -14,8 +14,8 @@
 		require "../Common/util.php";
 		
 		// get the files to process
-	    $dirToProcess = "toProcess/";
-		echo("Looking for files to process in \"$dirToProcess\"\n");
+	    $dirToProcess = "toProcess/"; 
+		echo("Looking for files Inventory Items to process in \"$dirToProcess\"\n");
 		$filesToProcess = scandir($dirToProcess);
 	
 		// setup the output directory where the files will be copied
@@ -29,6 +29,7 @@
 			$fileName = basename($path);
 			echo("Found \"$fileName\" to process.\n");
 			$matched = preg_match("/.csv$/i", $fileName);
+			// DL Question: what is purpose of /i
 			if ($matched) { // the file is a csv file
 				// import the file
 				echo("\tProcessing...\n");
@@ -64,15 +65,21 @@
 		// read the header row and determine the column index for the columns we're interested in
 		$headerRow = fgetcsv($handle);
 		$itemIndex = array_search("Item", $headerRow);
-		$descriptionIndex = array_search("Description", $headerRow);
 		$unitOfMeasureIndex = array_search("U/M", $headerRow);
+		$descriptionIndex = array_search("Description", $headerRow);
+		$qtyOnHandIndex = array_search("Qty On Hand", $headerRow);
+		$qtyOnPOIndex = array_search("Qty On PO", $headerRow);
+		$reorderPointIndex = array_search("Reorder Point", $headerRow);
 		// attempt to import the remaining rows
 		while (($row = fgetcsv($handle)) !== FALSE) { // for every row in the file, parse it as CSV
 			$itemId = $row[$itemIndex];
-			$description = $row[$descriptionIndex];
 			$unitOfMeasure = $row[$unitOfMeasureIndex];
+			$description = $row[$descriptionIndex];
+			$qtyOnHand = $row[$qtyOnHandIndex];
+			$qtyOnPO = $row[$qtyOnPOIndex];
+			$reorderPoint = $row[$reorderPointIndex];
 			// udpate the database with the information extracte from the row
-			insertOrUpdateInventoryItem($itemId, $description, $unitOfMeasure);
+			insertOrUpdateInventoryItem($itemId, $description, $unitOfMeasure,$qtyOnHand,$qtyOnPO,$reorderPoint);
 		}
 		// close the file
 		fclose($handle);
@@ -84,15 +91,24 @@
 	 * @param $id String id of the item.
 	 * @param $description String
 	 * @param $unitOfMeasure String
+	 * @param $qtyOnHand Int
+	 * @param $qtyOnPO Int
+	 * @param $reorderPoint Int
 	 */
-	function insertOrUpdateInventoryItem($id, $description, $unitOfMeasure) {
+	function insertOrUpdateInventoryItem($id, $description, $unitOfMeasure,$qtyOnHand,$qtyOnPO,$reorderPoint) {
 		echo("\tInserting/updating Inventory item:\n");
 		echoWithIndentAndCutoff("id", $id, "\t\t", 100);
 		echoWithIndentAndCutoff("description", $description, "\t\t", 100);
 		echoWithIndentAndCutoff("unit of measure", $unitOfMeasure, "\t\t", 100);
+		echoWithIndentAndCutoff("qty on hand", $qtyOnHand, "\t\t", 100);
+		echoWithIndentAndCutoff("qty on PO", $qtyOnPO, "\t\t", 100);
+		echoWithIndentAndCutoff("Reorder Point", $reorderPoint, "\t\t", 100);
 		$itemId = mysql_real_escape_string($id);
 		$description = mysql_real_escape_string($description);
 		$unitOfMeasure = mysql_real_escape_string($unitOfMeasure);
+		$qtyOnHand = mysql_real_escape_string($qtyOnHand);
+		$qtyOnPO = mysql_real_escape_string($qtyOnPO);
+		$reorderPoint = mysql_real_escape_string($reorderPoint);
 
 		// see if there's a quickbooks_item with this ide
 		$inventoryItemIdQuery = 
@@ -103,15 +119,18 @@
 		if (mysql_num_rows($result) == 0) { // inventory_item with this id doesn't exist
 			$insertQuery = 
 				"INSERT INTO inventory_items " .
-				"(id, description, unit_of_measure) " .
+				"(id, description, unit_of_measure, qty_on_hand, qty_on_PO, reorder_point) " .
 				"VALUES " .
-				"('$id', '$description', '$unitOfMeasure')";
+				"('$id', '$description', '$unitOfMeasure', '$qtyOnHand', '$qtyOnPO', '$reorderPoint')";
 			queryDb($insertQuery);
 		} else { // an inventory_item with this id already exists
 			$updateQuery =
 				"UPDATE inventory_items " .
 				"SET description='$description',
-					 unit_of_measure='$unitOfMeasure' " .
+					 unit_of_measure='$unitOfMeasure',
+					 qty_on_hand='$qtyOnHand',
+					 qty_on_PO='$qtyOnPO',
+					 reorder_point='$reorderPoint' " .
 				"WHERE id='$id'";
 			queryDb($updateQuery);
 		}
