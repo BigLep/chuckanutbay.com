@@ -67,8 +67,8 @@
 		$itemIndex = array_search("Item", $headerRow);
 		$unitOfMeasureIndex = array_search("U/M", $headerRow);
 		$descriptionIndex = array_search("Description", $headerRow);
-		$qtyOnHandIndex = array_search("Qty On Hand", $headerRow);
-		$qtyOnPOIndex = array_search("Qty On PO", $headerRow);
+		$qtyOnHandIndex = array_search("Quantity On Hand", $headerRow);
+		$qtyOnPOIndex = array_search("Quantity On Purchase Order", $headerRow);
 		$reorderPointIndex = array_search("Reorder Point", $headerRow);
 		// attempt to import the remaining rows
 		while (($row = fgetcsv($handle)) !== FALSE) { // for every row in the file, parse it as CSV
