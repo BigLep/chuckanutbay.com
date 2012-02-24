@@ -70,6 +70,7 @@
 		$qtyOnHandIndex = array_search("Quantity On Hand", $headerRow);
 		$qtyOnPOIndex = array_search("Quantity On Purchase Order", $headerRow);
 		$reorderPointIndex = array_search("Reorder Point", $headerRow);
+		$recipeDescriptionIndex = array_search("Recipe Description", $headerRow);
 		// attempt to import the remaining rows
 		while (($row = fgetcsv($handle)) !== FALSE) { // for every row in the file, parse it as CSV
 			$itemId = $row[$itemIndex];
@@ -78,8 +79,9 @@
 			$qtyOnHand = $row[$qtyOnHandIndex];
 			$qtyOnPO = $row[$qtyOnPOIndex];
 			$reorderPoint = $row[$reorderPointIndex];
+			$recipeDescription = $row[$recipeDescriptionIndex];
 			// udpate the database with the information extracte from the row
-			insertOrUpdateInventoryItem($itemId, $description, $unitOfMeasure,$qtyOnHand,$qtyOnPO,$reorderPoint);
+			insertOrUpdateInventoryItem($itemId, $description, $unitOfMeasure,$qtyOnHand,$qtyOnPO,$reorderPoint,$recipeDescription);
 		}
 		// close the file
 		fclose($handle);
@@ -95,7 +97,7 @@
 	 * @param $qtyOnPO Int
 	 * @param $reorderPoint Int
 	 */
-	function insertOrUpdateInventoryItem($id, $description, $unitOfMeasure,$qtyOnHand,$qtyOnPO,$reorderPoint) {
+	function insertOrUpdateInventoryItem($id, $description, $unitOfMeasure,$qtyOnHand,$qtyOnPO,$reorderPoint,$recipeDescription) {
 		echo("\tInserting/updating Inventory item:\n");
 		echoWithIndentAndCutoff("id", $id, "\t\t", 100);
 		echoWithIndentAndCutoff("description", $description, "\t\t", 100);
@@ -103,12 +105,14 @@
 		echoWithIndentAndCutoff("qty on hand", $qtyOnHand, "\t\t", 100);
 		echoWithIndentAndCutoff("qty on PO", $qtyOnPO, "\t\t", 100);
 		echoWithIndentAndCutoff("Reorder Point", $reorderPoint, "\t\t", 100);
+		echoWithIndentAndCutoff("Recipe Description", $recipeDescription, "\t\t", 100);
 		$itemId = mysql_real_escape_string($id);
 		$description = mysql_real_escape_string($description);
 		$unitOfMeasure = mysql_real_escape_string($unitOfMeasure);
 		$qtyOnHand = mysql_real_escape_string($qtyOnHand);
 		$qtyOnPO = mysql_real_escape_string($qtyOnPO);
 		$reorderPoint = mysql_real_escape_string($reorderPoint);
+		$recipeDescription = mysql_real_escape_string($recipeDescription);
 
 		// see if there's a quickbooks_item with this ide
 		$inventoryItemIdQuery = 
@@ -119,9 +123,9 @@
 		if (mysql_num_rows($result) == 0) { // inventory_item with this id doesn't exist
 			$insertQuery = 
 				"INSERT INTO inventory_items " .
-				"(id, description, unit_of_measure, qty_on_hand, qty_on_PO, reorder_point) " .
+				"(id, description, unit_of_measure, qty_on_hand, qty_on_PO, reorder_point, recipe_description) " .
 				"VALUES " .
-				"('$id', '$description', '$unitOfMeasure', '$qtyOnHand', '$qtyOnPO', '$reorderPoint')";
+				"('$id', '$description', '$unitOfMeasure', '$qtyOnHand', '$qtyOnPO', '$reorderPoint', '$recipeDescription')";
 			queryDb($insertQuery);
 		} else { // an inventory_item with this id already exists
 			$updateQuery =
@@ -130,7 +134,8 @@
 					 unit_of_measure='$unitOfMeasure',
 					 qty_on_hand='$qtyOnHand',
 					 qty_on_PO='$qtyOnPO',
-					 reorder_point='$reorderPoint' " .
+					 reorder_point='$reorderPoint',
+					 recipe_description='$recipeDescription' " .
 				"WHERE id='$id'";
 			queryDb($updateQuery);
 		}
