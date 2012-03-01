@@ -71,6 +71,7 @@
 		$qtyOnPOIndex = array_search("Quantity On Purchase Order", $headerRow);
 		$reorderPointIndex = array_search("Reorder Point", $headerRow);
 		$recipeDescriptionIndex = array_search("Recipe Description", $headerRow);
+		$activeStatusIndex = array_search("Active Status", $headerRow);
 		// attempt to import the remaining rows
 		while (($row = fgetcsv($handle)) !== FALSE) { // for every row in the file, parse it as CSV
 			$itemId = $row[$itemIndex];
@@ -80,8 +81,16 @@
 			$qtyOnPO = $row[$qtyOnPOIndex];
 			$reorderPoint = $row[$reorderPointIndex];
 			$recipeDescription = $row[$recipeDescriptionIndex];
+			
+			// change active status data from text to boolean
+			if ($row[$activeStatusIndex] == "Active") {
+				$activeStatus="1";
+			} else {
+				$activeStatus="0";
+			}
+			
 			// udpate the database with the information extracte from the row
-			insertOrUpdateInventoryItem($itemId, $description, $unitOfMeasure,$qtyOnHand,$qtyOnPO,$reorderPoint,$recipeDescription);
+			insertOrUpdateInventoryItem($itemId, $description, $unitOfMeasure, $qtyOnHand, $qtyOnPO, $reorderPoint, $recipeDescription, $activeStatus);
 		}
 		// close the file
 		fclose($handle);
@@ -96,8 +105,10 @@
 	 * @param $qtyOnHand Int
 	 * @param $qtyOnPO Int
 	 * @param $reorderPoint Int
+	 * @param $recipeDescription Text
+	 * @param $activeStatus Bit
 	 */
-	function insertOrUpdateInventoryItem($id, $description, $unitOfMeasure,$qtyOnHand,$qtyOnPO,$reorderPoint,$recipeDescription) {
+	function insertOrUpdateInventoryItem($id, $description, $unitOfMeasure, $qtyOnHand, $qtyOnPO, $reorderPoint, $recipeDescription, $activeStatus) {
 		echo("\tInserting/updating Inventory item:\n");
 		echoWithIndentAndCutoff("id", $id, "\t\t", 100);
 		echoWithIndentAndCutoff("description", $description, "\t\t", 100);
@@ -106,6 +117,7 @@
 		echoWithIndentAndCutoff("qty on PO", $qtyOnPO, "\t\t", 100);
 		echoWithIndentAndCutoff("Reorder Point", $reorderPoint, "\t\t", 100);
 		echoWithIndentAndCutoff("Recipe Description", $recipeDescription, "\t\t", 100);
+		echoWithIndentAndCutoff("Active Status", $activeStatus, "\t\t", 100);
 		$itemId = mysql_real_escape_string($id);
 		$description = mysql_real_escape_string($description);
 		$unitOfMeasure = mysql_real_escape_string($unitOfMeasure);
@@ -113,6 +125,7 @@
 		$qtyOnPO = mysql_real_escape_string($qtyOnPO);
 		$reorderPoint = mysql_real_escape_string($reorderPoint);
 		$recipeDescription = mysql_real_escape_string($recipeDescription);
+		$activeStatus = mysql_real_escape_string($activeStatus);
 
 		// see if there's a quickbooks_item with this ide
 		$inventoryItemIdQuery = 
@@ -123,9 +136,9 @@
 		if (mysql_num_rows($result) == 0) { // inventory_item with this id doesn't exist
 			$insertQuery = 
 				"INSERT INTO inventory_items " .
-				"(id, description, unit_of_measure, qty_on_hand, qty_on_PO, reorder_point, recipe_description) " .
+				"(id, description, unit_of_measure, qty_on_hand, qty_on_PO, reorder_point, recipe_description, active_status) " .
 				"VALUES " .
-				"('$id', '$description', '$unitOfMeasure', '$qtyOnHand', '$qtyOnPO', '$reorderPoint', '$recipeDescription')";
+				"('$id', '$description', '$unitOfMeasure', '$qtyOnHand', '$qtyOnPO', '$reorderPoint', '$recipeDescription', '$activeStatus')";
 			queryDb($insertQuery);
 		} else { // an inventory_item with this id already exists
 			$updateQuery =
@@ -135,7 +148,8 @@
 					 qty_on_hand='$qtyOnHand',
 					 qty_on_PO='$qtyOnPO',
 					 reorder_point='$reorderPoint',
-					 recipe_description='$recipeDescription' " .
+					 recipe_description='$recipeDescription',
+					 active_status='$activeStatus' " .
 				"WHERE id='$id'";
 			queryDb($updateQuery);
 		}
