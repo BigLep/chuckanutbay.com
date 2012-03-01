@@ -4,7 +4,7 @@ prodDir=$1
 devoDir=$prodDir/DEVO
 
 echo "Creating directories:"
-for dir in "Applications/NutritionLabelImporter/toProcess" "Applications/QuickBooksItemsImporterImporter/toProcess" "dynamicPages/common"; do
+for dir in "Applications/NutritionLabelImporter/toProcess" "Applications/QuickBooksItemsImporterImporter/toProcess" "Applications/Common"; do
 	echo "$dir";
 	mkdir -p $devoDir/${dir}
 done
@@ -18,5 +18,5 @@ done
 echo
 
 echo "Copying environment info:"
-rsync -av $prodDir/dynamicPages/common/setUpEnvironment.php $devoDir/dynamicPages/common/
+rsync -av $prodDir/Applications/Common/setUpEnvironment.php $devoDir/Applications/Common/
 echo

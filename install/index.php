@@ -1,7 +1,7 @@
 <?php
 $title = "chuckantubay.com Install";
-require('../dynamicPages/common/htmlToTitle.php');
-require('../dynamicPages/common/extJsIncludes.php');
+require('../Applications/Common/htmlToTitle.php');
+require('../Applications/Common/extJsIncludes.php');
 ?>
 	<script type="application/javascript">
 		Ext.onReady(function() {
@@ -35,7 +35,7 @@ require('../dynamicPages/common/extJsIncludes.php');
 	</script>
 
 <?php
-require('../dynamicPages/common/endHeadToBody.php');
+require('../Applications/Common/endHeadToBody.php');
 ?>
 	<div id="setupDevo" style="padding-bottom:25px;">
 		<h2>Setup DEVO</h2>
@@ -77,5 +77,5 @@ require('../dynamicPages/common/endHeadToBody.php');
 		<div id="setSugarCrmPermissionsOutput"></div>
 	</div>
 <?php
-require('../dynamicPages/common/footer.php');
+require('../Applications/Common/footer.php');
 ?>
